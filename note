@@ -1,0 +1,141 @@
+## commed for make controller 
+php spark make:controller  controllerName 
+
+## commed for make model 
+php spark make:model  modelName 
+
+## commed for make Filter 
+php spark make:filter  filterName 
+
+## commed for make Migration
+php spark make:Migration userMigration
+
+## commed for Migration table
+php spark migrate
+
+## commed for firebase/jwt-php
+composer require firebase/php-jwt
+
+## jwt Authintication
+
+< ?php
+namespace App\Controllers;
+
+use App\Controllers\BaseController;
+
+use App\Models\User;
+use CodeIgniter\API\ResponseTrait;
+use \Firebase\JWT\JWT;
+use \Firebase\JWT\KEY;
+class className extends BaseController{
+    use Responsetrait;
+    public function create(){
+        $users = User();
+        $data=[
+            'name'=>$this->request->getVar('name'),
+            'username'=>$this->request->getVar('username'),
+            'email'=>$this->request->getVar('email'),
+            'role'=>$this->request->getVar('role'),
+            'password'=>password_hash($this->request->getVar('password'), PASSWOED_DEFAULT),
+
+
+        ]
+        //return $this->respondCreated($data);
+
+        //for email existance
+        $is_email = $users->where('email', $this->request->getVar('email'))->first();
+        if($is_email){
+             return $this->respondCreated([
+                'status' => 0,
+                'message' => 'Email Already exist',
+            ])
+        }else{
+            $result = $users->save($data);
+        if($result){
+            return $this->respondCreated([
+                'status' => 1,
+                'message' => 'User Created Successfully',
+            ])
+        }else{
+            return $this->respondCreated([
+                'status' => 0,
+                'message' => 'User Created Not Successfully',
+            ])
+        }
+        }
+        
+    }
+    publick function login(){
+        $users = new User();
+        $email = $this->request->getVar('email');
+        $password = $this->request->getVar('password');
+        $is_email = $users->where('email' $email)->first();
+        if($is_email){
+            $verify_password = password_verify($password, $is_email['password']);
+            
+            if($verify_password){
+                $key = "hidmosharrofhosainj6402drgfadgkk2458";
+                $payload = [
+                    "iss" = "localhost",
+                    "aud" = "localhost",
+                    "data"=[
+                        'user_id' => $is_email["id'],
+                        'name' => $is_email["name'],
+                        'email' => $is_email["email'],
+
+                    ],
+                ];
+                $jwt = JWT::encode($payload, $key, "HS256");
+                 return $this->respondCreated([
+                'status' => 1,
+                'jwt'=$jwt,
+                'message' => 'User Login Successfully',
+            ]);
+            }else{
+                 return $this->respondCreated([
+                'status' => 0,
+                'message' => 'Invalid Email and Password',
+            ]);
+            }
+        }else{
+              return $this->respondCreated([
+                'status' => 0,
+                'message' => 'Email is Not found',
+            ]);
+        }
+    }
+
+    public function readUser(){
+        $request = service('request');
+        $key = "hidmosharrofhosainj6402drgfadgkk2458";
+        $headers = $request->getHeader('authorization');
+        $jwt = $headers->getValue();
+        $userData = JWT::decode($jwt, new KEY($key, 'HS256'));
+        $users = $userData->data;
+        return $this->respond([
+            'status' => 1,
+            'users' = $users,
+        ]);
+    }
+}
+
+
+
+//Create fillter Auth
+public function before(RequestInterface $request,{
+$req = service('request');
+$headers = $req->getHeader(' ');
+$jwt = $headers->getValue();
+if($jwt){
+    return "unAuth";
+}
+
+})
+
+//filters.php
+//add Auth
+'auth' => Auth :: class,
+
+//routes
+//routes Add 
+['filter' => 'auth']
