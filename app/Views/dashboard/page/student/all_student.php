@@ -19,7 +19,7 @@
                 <th scope="col">Course Name</th>
                 <th scope="col">Batch Name</th>
                 <th scope="col">Branch Name</th>
-                <th scope="col">Payment Status</th>
+                <th scope="col">Course Fee</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
                 </tr>
@@ -36,13 +36,14 @@
                     <td><?= $student['course_name'] ?></td>
                     <td><?= $student['batch_name'] ?></td>
                     <td><?= $student['branch_name'] ?></td>
-                    <td>Paid</td>
+                    <td><?= $student['course_fee'] ?></td>
                     <td><img src="<?= base_url('uploads/img/'.$student['image']) ?>" width="40"  alt=""></td>
                     <td>
                         <ul class="d-flex list-unstyled m-0"> 
                             <li><a class="edit"  href="<?= base_url('dashboard/view_student/'.$student['student_id'] ) ?>"><i class="fa-solid fa-eye p-1"></a></i></li>
                             <li><a href="<?= base_url('dashboard/edit_student/'.$student['student_id'] ) ?>"><i class="fa-regular fa-pen-to-square p-1"></i></a></li>
                             <li><a href="<?= base_url('dashboard/delete_student/'.$student['student_id'] ) ?>"><i class="fa-solid fa-trash p-1"></i></li></a>
+                            <li><a href="<?= base_url('dashboard/payment/'.$student['student_id'] ) ?>"><i class="fa-regular fa-credit-card"></i></li></a>
                         </ul>
                     </td>
                 </tr>

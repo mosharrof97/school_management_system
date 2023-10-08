@@ -140,8 +140,8 @@ class StudentController extends BaseController
                     "label" => "Branch", 
                     "rules" => "required"
                 ],
-                "payment" => [
-                    "label" => "Payment", 
+                "course_fee" => [
+                    "label" => "Course Fee", 
                     "rules" => "required"
                 ],
                 // "image" => [
@@ -170,7 +170,7 @@ class StudentController extends BaseController
             $course = $this->request->getPost('course');
             $batch = $this->request->getPost('batch');
             $branch = $this->request->getPost('branch');
-            $payment = $this->request->getPost('payment');
+            $course_fee = $this->request->getPost('course_fee');
             $image = $this->request->getFile('file');
             $imageName = $image->getRandomName();
 
@@ -183,7 +183,7 @@ class StudentController extends BaseController
                 'district'=>$district,	'address'=>$address, 'college-name'=>$college_name,	
                 'hsc-roll'=>$hsc_roll,	'hsc-reg'=>$hsc_reg, 'hsc-gpa'=>$hsc_gpa, 
                 'school-name'=>$school_name, 'ssc-roll'=>$ssc_roll,	'ssc-reg'=>$ssc_reg, 'ssc-gpa'=>$ssc_gpa, 
-                'course'=>$course, 'batch'=>$batch,	'branch'=>$branch, 'payment'=>$payment, //'file'=>$image ,
+                'course'=>$course, 'batch'=>$batch,	'branch'=>$branch, 'course_fee'=>$course_fee, //'file'=>$image ,
             ];
 
             if($validation->run($validData)){ 
@@ -195,7 +195,7 @@ class StudentController extends BaseController
                     'district'=>$district,	'address'=>$address, 'college_name'=>$college_name,	
                     'hsc_roll'=>$hsc_roll,	'hsc_reg'=>$hsc_reg, 'hsc_gpa'=>$hsc_gpa, 
                     'school_name'=>$school_name, 'ssc_roll'=>$ssc_roll,	'ssc_reg'=>$ssc_reg, 'ssc-gpa'=>$ssc_gpa, 
-                    'course_id'=>$course, 'batch_id'=>$batch,	'branch_id'=>$branch, 'payment_id'=>$payment, 'image'=>$imageName
+                    'course_id'=>$course, 'batch_id'=>$batch,	'branch_id'=>$branch, 'course_fee'=>$course_fee, 'image'=>$imageName
 
                 ];
 
@@ -204,7 +204,7 @@ class StudentController extends BaseController
                 $student->insert($formdata);
                 $session =  session();
                 $session->setFlashData("success", "Successful Registration");
-                return redirect()->to("/dashboard/add_student");
+                // return redirect()->to("/dashboard/add_student");
 
             }else{
                 $data["validation"] = $validation->getErrors();
@@ -333,8 +333,8 @@ class StudentController extends BaseController
                     "label" => "Branch", 
                     "rules" => "required"
                 ],
-                "payment" => [
-                    "label" => "Payment", 
+                "course_fee" => [
+                    "label" => "Course Fee", 
                     "rules" => "required"
                 ],
                 // "image" => [
@@ -363,7 +363,7 @@ class StudentController extends BaseController
             $course = $this->request->getPost('course');
             $batch = $this->request->getPost('batch');
             $branch = $this->request->getPost('branch');
-            $payment = $this->request->getPost('payment');
+            $course_fee = $this->request->getPost('course_fee');
             $image = $this->request->getFile('file');
             $imageName = $image->getRandomName();
 
@@ -376,7 +376,7 @@ class StudentController extends BaseController
                 'district'=>$district,	'address'=>$address, 'college-name'=>$college_name,	
                 'hsc-roll'=>$hsc_roll,	'hsc-reg'=>$hsc_reg, 'hsc-gpa'=>$hsc_gpa, 
                 'school-name'=>$school_name, 'ssc-roll'=>$ssc_roll,	'ssc-reg'=>$ssc_reg, 'ssc-gpa'=>$ssc_gpa, 
-                'course'=>$course, 'batch'=>$batch,	'branch'=>$branch, 'payment'=>$payment, //'file'=>$image ,
+                'course'=>$course, 'batch'=>$batch,	'branch'=>$branch, 'course_fee'=>$course_fee, //'file'=>$image ,
             ];
 
             if($validation->run($validData)){ 
@@ -388,7 +388,7 @@ class StudentController extends BaseController
                     'district'=>$district,	'address'=>$address, 'college_name'=>$college_name,	
                     'hsc_roll'=>$hsc_roll,	'hsc_reg'=>$hsc_reg, 'hsc_gpa'=>$hsc_gpa, 
                     'school_name'=>$school_name, 'ssc_roll'=>$ssc_roll,	'ssc_reg'=>$ssc_reg, 'ssc-gpa'=>$ssc_gpa, 
-                    'course_id'=>$course, 'batch_id'=>$batch,	'branch_id'=>$branch, 'payment_id'=>$payment, 'image'=>$imageName
+                    'course_id'=>$course, 'batch_id'=>$batch,	'branch_id'=>$branch, 'course_fee'=>$course_fee, 'image'=>$imageName
 
                 ];
 
@@ -406,4 +406,21 @@ class StudentController extends BaseController
         }
         return View('dashboard/page/student/update_student', $data);
     }
+
+    //Payment 
+    public function payment($id)
+    {
+        $student= new StudentModel();
+        $batch= new BatchModel();
+        $branch= new BranchModel();
+        $course= new CourseModel();
+        $data=[
+            "page_title"=>"Add Payment",
+            "page_heading" =>"Add Payment",
+            'student' => $student->select('student.*, batch_name, course.name as course_name, branch.name as branch_name')->join('batch',  'batch.batch_id = student.batch_id')->join('course',  'course.course_id = student.course_id')->join('branch',  'branch.branch_id = student.branch_id')->where('student_id', $id)->first()
+            
+        ];
+        return View('dashboard/page/payment/addpayment', $data);
+    }
+
 }

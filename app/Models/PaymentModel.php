@@ -4,16 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class StudentModel extends Model
+class PaymentModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'student';
-    protected $primaryKey       = 'student_id';
+    protected $table            = 'payment';
+    protected $primaryKey       = 'payment_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['student_id','name',	'number', 'email','father_name', 'father_number', 'mother_name', 'mother_number', 'district',	'address',	'college_name',	'hsc_roll',	'hsc_reg', 'hsc_gpa', 'school_name', 'ssc_roll',	'ssc_reg', 'ssc-gpa', 'course_id', 'batch_id',	'branch_id', 'student_payment_id','course_fee', 'image'	];
+    protected $allowedFields    = ['payment_id','student_id','date','payment'];
 
     // Dates
     protected $useTimestamps = false;

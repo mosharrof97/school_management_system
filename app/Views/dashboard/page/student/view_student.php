@@ -167,7 +167,7 @@
                                                 <td><?= $student['course_name'] ?></td>
                                                 <td><?= $student['batch_name'] ?></td>
                                                 <td><?= $student['branch_name'] ?></td>
-                                                <td><?= $student['payment_id'] ?></td>
+                                                <td><?= $student['course_fee'] ?></td>
                                             </tr>                        
                                         </table>
                                     </div>

@@ -167,9 +167,9 @@
                     </div>
 
                     <div class="mb-3 " style="width:100%;">
-                        <label for="payment" class="form-label">Payment</label>
-                        <input type="text" class="form-control" id="payment" name="payment" value="<?= $student['payment_id']?>">
-                        <small class="text-danger"><?= isset($validation['payment']) ? $validation['payment'] : null ;  ?></small>
+                        <label for="course_fee" class="form-label">Course Fee</label>
+                        <input type="text" class="form-control" id="course_fee" name="course_fee" value="<?= $student['course_fee']?>">
+                        <small class="text-danger"><?= isset($validation['course_fee']) ? $validation['course_fee'] : null ;  ?></small>
                     </div>
                 </div>
 
