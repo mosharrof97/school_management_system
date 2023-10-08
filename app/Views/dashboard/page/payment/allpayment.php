@@ -37,12 +37,16 @@
                     <td><?= $payment['course_id']?></td>
                     <td><?= $payment['batch_id']?></td>
                     <td><?= $payment['branch_id']?></td>
-                    <td><?= $payment['course_fee']?></td>
-                    <td><?= $payment['payment']?></td>
+                    <td ><?= $payment['course_fee']?></td>
+                    <td ><?= $payment['payment']?></td>
+                    <td >2000</td>
+                    
                     <td><img src="<?= base_url('uploads/img/'.$payment['image']) ?>" width="40"  alt=""></td>
                     <td>
                         <ul class="d-flex list-unstyled m-0"> 
-                            <li><a class="edit btn btn-primary"  href="">payment</a></li>
+                            <li><a class="edit btn btn-primary me-2"  href="<?= base_url('dashboard/view_payment/'.$payment['student_id'] ) ?>">View</a></li>
+                            <li><a class="edit btn btn-primary"  href="<?= base_url('dashboard/payment/'.$payment['student_id'] ) ?>">payment</a></li>
+                        
                         </ul>
                     </td>
                 </tr>
@@ -55,6 +59,14 @@
         </div>            
     </div>
     </div>
+    <!-- <script>
+        
+        var course_fee = doucment.getElementById( 'course_fee').value;
+        var payment = doucment.getElementById( 'payment').value;
+        var amout = course_fee  -= payment ;
+        doucment.getElementById( 'payment').innerHTML = amout ;
+      
+    </script> -->
 
 
 

@@ -4,10 +4,6 @@
     <?= $page_title; ?>
 <?= $this->endSection(); ?>
 
-<?= $this->section('title') ;?>
-    <?= $page_heading; ?>
-<?= $this->endSection(); ?> 
-
 <?= $this->section('content') ;?>
 <div class="row justify-content-center">
         <div class="col-8 m-3">
@@ -15,6 +11,7 @@
                 <div class="d-flex justify-content-between my-4"> <h3><?= $page_heading; ?></h3> </div>
             
                 <div class="mb-3">
+                    <h4>Id : <?= $student['student_id']?></h4>
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" name="name" value="<?= $student['name']?>">
                     <small class="text-danger"><?= isset($validation["name"]) ? $validation["name"] : null;  ?></small>
@@ -175,7 +172,8 @@
 
                 <div class="mb-3">
                     <label for="file" class="form-label">Image</label>
-                    <input type="file" class="form-control" id="file" name="file">
+                    <input type="file" class="form-control" id="file" name="file" value="<?= $student['image']?>">
+                    <small class="text-danger"><?= isset($validation['file']) ? $validation['file'] : null ;  ?></small>
                     <img class="py-2" src="<?= base_url('uploads/img/'.$student['image']) ?>" width="100" height="100" alt="">
                 </div>
             

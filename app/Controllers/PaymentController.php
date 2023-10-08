@@ -13,28 +13,14 @@ class PaymentController extends BaseController
         $payment = new PaymentModel;
         $data=[
             'page_title'=>'All Payment',
-            'page_heading' => 'All Payment', 
-            'payments' => $payment->join('student', 'student.student_id = payment.student_id')->orderby('payment.student_id','DESC')->paginate(4, 'group'),
+            'page_heading' => 'All Payment',  
+            'payments' => $payment->join('student', 'student.student_id = payment.student')->orderby('payment_id','DESC')->paginate(4, 'group'),
             'pager' => $payment->pager,
         ];
         return View("dashboard/page/payment/allpayment", $data);
         
         
     }
-
-
-     //Payment 
-    //  public function payment($id)
-    //  {
-    //     $payment= new PaymentModel();
-    //      $student= new StudentModel();
-    //      $data=[
-    //          "page_title"=>"Add Payment",
-    //          "page_heading" =>"Add Payment",
-    //          'student' => $payment->select('payment.*')->join('student',  'student.student_id = payment.student_id'),  
-    //      ];
-    //      return View('dashboard/page/payment/addpayment', $data);
-    //  }
 
     //Add Payment
     public function addpayment(){
@@ -50,14 +36,26 @@ class PaymentController extends BaseController
 
             $formData = [
                 'payment'=> $payment_input,
-                'student_id'=> $student_id
+                'student'=> $student_id
             ];
 
             $payment->insert($formData);
             return redirect()->to('dashboard/all_payment');
         }
+    }
 
-
+    public function viewpayment($id){
+        $payment= new PaymentModel();
+        
+        $data=[
+            "page_title"=>"View Payment",
+            "page_heading" =>"View Payment",
+            // 'role' => $user_role->findAll(),
+            'payment' => $payment->select('payment.*')->join('student',  'student.student_id = payment.student')->where('payment_id', $id)->first(),
+            
+         ];
+         
+        return View('dashboard/page/payment/viewpayment', $data);
     }
 
 }

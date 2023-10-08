@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?=base_url("style.css"); ?>">
     <title><?= $this->renderSection('title'); ?></title>
 </head>
-<body>
+<body id="body">
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -167,6 +167,19 @@
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
                         <li><a href="<?= base_url()?>dashboard/all_class" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Classs</span></a></li>
                         <li><a href="<?= base_url()?>dashboard/add_class" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Class</span></a></li>
+                        <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Class</span></a></li>
+                    </ul>
+                    </div>
+                </li>
+
+                <li class="mb-1">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#payment-collapse" aria-expanded="false">
+                    <i class="fa-solid fa-money-bill-1-wave btn-icon"></i><span> Payment</span>
+                    </button>
+                    <div class="collapse" id="payment-collapse" style="">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                        <li><a href="<?= base_url()?>dashboard/all_payment" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Payment</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_payment" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add payment</span></a></li>
                         <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Class</span></a></li>
                     </ul>
                     </div>

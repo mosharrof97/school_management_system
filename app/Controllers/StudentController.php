@@ -179,28 +179,54 @@ class StudentController extends BaseController
                 'number'=>$number, 
                 'email'=>$email, 
                 'father-name'=>$father_name,
-                'father-number'=>$father_number, 'mother-name'=>$mother_name, 'mother-number'=>$mother_number, 
-                'district'=>$district,	'address'=>$address, 'college-name'=>$college_name,	
-                'hsc-roll'=>$hsc_roll,	'hsc-reg'=>$hsc_reg, 'hsc-gpa'=>$hsc_gpa, 
-                'school-name'=>$school_name, 'ssc-roll'=>$ssc_roll,	'ssc-reg'=>$ssc_reg, 'ssc-gpa'=>$ssc_gpa, 
-                'course'=>$course, 'batch'=>$batch,	'branch'=>$branch, 'course_fee'=>$course_fee, //'file'=>$image ,
+                'father-number'=>$father_number, 
+                'mother-name'=>$mother_name, 
+                'mother-number'=>$mother_number, 
+                'district'=>$district,	
+                'address'=>$address, 
+                'college-name'=>$college_name,	
+                'hsc-roll'=>$hsc_roll,	
+                'hsc-reg'=>$hsc_reg, 
+                'hsc-gpa'=>$hsc_gpa, 
+                'school-name'=>$school_name,
+                 'ssc-roll'=>$ssc_roll,
+                 	'ssc-reg'=>$ssc_reg, 
+                    'ssc-gpa'=>$ssc_gpa, 
+                'course'=>$course, 
+                'batch'=>$batch,	
+                'branch'=>$branch, 
+                'course_fee'=>$course_fee,
+                 //'file'=>$image ,
             ];
 
             if($validation->run($validData)){ 
                 $formdata = [
                     'name'=>$name,	
-                    'number'=>$number, 'email'=>$email, 
+                    'number'=>$number,
+                     'email'=>$email, 
                     'father_name'=>$father_name,
-                    'father_number'=>$father_number, 'mother_name'=>$mother_name, 'mother_number'=>$mother_number, 
-                    'district'=>$district,	'address'=>$address, 'college_name'=>$college_name,	
-                    'hsc_roll'=>$hsc_roll,	'hsc_reg'=>$hsc_reg, 'hsc_gpa'=>$hsc_gpa, 
-                    'school_name'=>$school_name, 'ssc_roll'=>$ssc_roll,	'ssc_reg'=>$ssc_reg, 'ssc-gpa'=>$ssc_gpa, 
-                    'course_id'=>$course, 'batch_id'=>$batch,	'branch_id'=>$branch, 'course_fee'=>$course_fee, 'image'=>$imageName
-
+                    'father_number'=>$father_number, 
+                    'mother_name'=>$mother_name, 
+                    'mother_number'=>$mother_number, 
+                    'district'=>$district,	
+                    'address'=>$address, 
+                    'college_name'=>$college_name,	
+                    'hsc_roll'=>$hsc_roll,	
+                    'hsc_reg'=>$hsc_reg, 
+                    'hsc_gpa'=>$hsc_gpa, 
+                    'school_name'=>$school_name, 
+                    'ssc_roll'=>$ssc_roll,	
+                    'ssc_reg'=>$ssc_reg, 
+                    'ssc-gpa'=>$ssc_gpa, 
+                    'course_id'=>$course, 
+                    'batch_id'=>$batch,
+                    'branch_id'=>$branch, 
+                    'course_fee'=>$course_fee, 
+                    'image'=>$imageName
                 ];
 
                 $image->move('uploads/img', $imageName); 
-                // print_r($formdata);
+                print_r($formdata);
                 $student->insert($formdata);
                 $session =  session();
                 $session->setFlashData("success", "Successful Registration");
@@ -246,6 +272,7 @@ class StudentController extends BaseController
             "batch" => $batch->findAll(),
             "branch" => $branch->findAll(),
             "course" => $course->findAll(),
+            'student'=> $student->first(),
         ];
 
         if($this->request->getMethod() == 'post'){
@@ -337,10 +364,10 @@ class StudentController extends BaseController
                     "label" => "Course Fee", 
                     "rules" => "required"
                 ],
-                // "image" => [
-                //     "label" => "Image", 
-                //     "rules" => "required"
-                // ],
+                "file" => [
+                    "label" => "Image", 
+                    "rules" => "required"
+                ],
             ]);
  
             $name = $this->request->getPost('name');
@@ -376,20 +403,33 @@ class StudentController extends BaseController
                 'district'=>$district,	'address'=>$address, 'college-name'=>$college_name,	
                 'hsc-roll'=>$hsc_roll,	'hsc-reg'=>$hsc_reg, 'hsc-gpa'=>$hsc_gpa, 
                 'school-name'=>$school_name, 'ssc-roll'=>$ssc_roll,	'ssc-reg'=>$ssc_reg, 'ssc-gpa'=>$ssc_gpa, 
-                'course'=>$course, 'batch'=>$batch,	'branch'=>$branch, 'course_fee'=>$course_fee, //'file'=>$image ,
+                'course'=>$course, 'batch'=>$batch,	'branch'=>$branch, 'course_fee'=>$course_fee, 'file'=>$image ,
             ];
 
             if($validation->run($validData)){ 
                 $formdata = [
                     'name'=>$name,	
-                    'number'=>$number, 'email'=>$email, 
+                    'number'=>$number, 
+                    'email'=>$email, 
                     'father_name'=>$father_name,
-                    'father_number'=>$father_number, 'mother_name'=>$mother_name, 'mother_number'=>$mother_number, 
-                    'district'=>$district,	'address'=>$address, 'college_name'=>$college_name,	
-                    'hsc_roll'=>$hsc_roll,	'hsc_reg'=>$hsc_reg, 'hsc_gpa'=>$hsc_gpa, 
-                    'school_name'=>$school_name, 'ssc_roll'=>$ssc_roll,	'ssc_reg'=>$ssc_reg, 'ssc-gpa'=>$ssc_gpa, 
-                    'course_id'=>$course, 'batch_id'=>$batch,	'branch_id'=>$branch, 'course_fee'=>$course_fee, 'image'=>$imageName
-
+                    'father_number'=>$father_number, 
+                    'mother_name'=>$mother_name, 
+                    'mother_number'=>$mother_number, 
+                    'district'=>$district,	
+                    'address'=>$address, 
+                    'college_name'=>$college_name,	
+                    'hsc_roll'=>$hsc_roll,	
+                    'hsc_reg'=>$hsc_reg, 
+                    'hsc_gpa'=>$hsc_gpa, 
+                    'school_name'=>$school_name, 
+                    'ssc_roll'=>$ssc_roll,	
+                    'ssc_reg'=>$ssc_reg, 
+                    'ssc-gpa'=>$ssc_gpa, 
+                    'course_id'=>$course, 
+                    'batch_id'=>$batch,	
+                    'branch_id'=>$branch, 
+                    'course_fee'=>$course_fee, 
+                    'image'=>$imageName
                 ];
 
                 $image->move('uploads/img', $imageName); 

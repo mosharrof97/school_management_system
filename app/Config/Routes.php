@@ -68,7 +68,7 @@ $routes->get('/dashboard/delete_notice/(:num)','NoticeController::delete/$1');
 $routes->get('/dashboard/all_student','StudentController::index');
 $routes->get('/dashboard/add_student','StudentController::addstudent');
 $routes->post('/dashboard/add_student','StudentController::addstudent');
-$routes->get('/dashboard/edit_student/(:num)','StudentController::edit/$1');
+$routes->get('/dashboard/update_student/(:num)','StudentController::edit/$1');
 $routes->post('/dashboard/update_student/(:num)','StudentController::update/$1');
 $routes->get('/dashboard/view_student/(:num)','StudentController::viewstudent/$1');
 $routes->get('/dashboard/delete_student/(:num)',    'StudentController::delete/$1');
@@ -77,12 +77,13 @@ $routes->get('/dashboard/delete_student/(:num)',    'StudentController::delete/$
 //Payment
 $routes->get('/dashboard/all_payment','PaymentController::index');
 $routes->get('/dashboard/payment/(:num)','StudentController::payment/$1');
-$routes->post('/dashboard/payment/addpayment','PaymentController::addpayment');
+$routes->post('/dashboard/addpayment','PaymentController::addpayment');
+$routes->get('/dashboard/view_payment/(:num)','PaymentController::viewpayment/$1');
+
 
 
 $routes->get('/dashboard/edit_student/(:num)','PaymentController::edit/$1');
 $routes->post('/dashboard/update_student/(:num)','PaymentController::update/$1');
-$routes->get('/dashboard/view_student/(:num)','PaymentController::viewstudent/$1');
 $routes->get('/dashboard/delete_student/(:num)','PaymentController::delete/$1');
 
 $routes->match(['get', 'post'], '/login','Login::index');

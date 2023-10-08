@@ -13,7 +13,7 @@
         <div class="col-8 m-3">
             
             
-            <form action="addpayment" method="post" > 
+            <form action="/dashboard/addpayment" method="post" > 
             <div class="d-flex justify-content-between my-4"> <h3><?= $page_heading; ?></h3> <a href="<?= base_url()?>dashboard/all_student" class="text-decoration-none btn btn-primary ">All new</a></div>
               
                 <div class="d-flex justify-content-between">
