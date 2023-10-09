@@ -8,8 +8,8 @@
 <?= $this->section('content') ;?>
     <div class="row justify-content-center">
         <div class="col-11">
-            
-        <table class="table ">
+         
+        <table class="table " id="data-table">
             <div class="d-flex justify-content-between my-4"> <h3><?= $page_heading; ?></h3> <a href="<?= base_url()?>dashboard/add_student"class="text-decoration-none btn btn-primary ">Add new</a></div>
             <thead>
                 <tr>
@@ -40,7 +40,7 @@
                     <td><img src="<?= base_url('uploads/img/'.$student['image']) ?>" width="40"  alt=""></td>
                     <td>
                         <ul class="d-flex list-unstyled m-0"> 
-                            <li><a href="<?= base_url('dashboard/update_student/'.$student['student_id'] ) ?>" ><i class="fa-regular fa-eye p-1"></i></a></li>
+                            <li><a href="<?= base_url('dashboard/view_payment/'.$student['student_id'] ) ?>" ><i class="fa-regular fa-eye p-1"></i></a></li>
                             <li><a href="<?= base_url('dashboard/payment/'.$student['student_id'] ) ?>"><i class="fa-regular fa-credit-card"></i></a></li>
                             
                             <li class="px-2"></li>

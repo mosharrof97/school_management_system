@@ -19,7 +19,7 @@ class StudentController extends BaseController
             "page_title"=>"Student registration",
             "page_heading" =>"Student registration",
             // 'students' => $student->orderby('student_id','DESC')->paginate(3, 'group'),
-            'students' => $student->select('student.*, batch_name, course.name as course_name, branch.name as branch_name')->join('batch',  'batch.batch_id = student.batch_id')->join('course',  'course.course_id = student.course_id')->join('branch',  'branch.branch_id = student.branch_id')->orderby('student_id','DESC')->paginate(4, 'group'),
+            'students' => $student->select('student.*, batch_name, course.name as course_name, branch.name as branch_name')->join('batch',  'batch.batch_id = student.batch_id')->join('course',  'course.course_id = student.course_id')->join('branch',  'branch.branch_id = student.branch_id')->orderby('student_id','DESC')->paginate(15, 'group'),
             'pager' => $student->pager,
     ];
         return View('dashboard/page/student/all_student', $data);
@@ -364,10 +364,10 @@ class StudentController extends BaseController
                     "label" => "Course Fee", 
                     "rules" => "required"
                 ],
-                "file" => [
-                    "label" => "Image", 
-                    "rules" => "required"
-                ],
+                // "file" => [
+                //     "label" => "Image", 
+                //     "rules" => "required"
+                // ],
             ]);
  
             $name = $this->request->getPost('name');
@@ -440,8 +440,7 @@ class StudentController extends BaseController
 
             }else{
                 $data["validation"] = $validation->getErrors();
-                echo "data Invalid";
-
+                // echo "data Invalid";
             }
         }
         return View('dashboard/page/student/update_student', $data);

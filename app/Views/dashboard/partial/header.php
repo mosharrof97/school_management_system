@@ -6,7 +6,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
+    <!--------- Data Table----- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
     <link rel="stylesheet" href="<?=base_url("style.css"); ?>">
+
     <title><?= $this->renderSection('title'); ?></title>
 </head>
 <body id="body">
@@ -18,53 +24,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
+       
       </ul>
       <div class="d-flex align-items-center" >
         
         <div class="dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <div class="me-2" ><i class="fa-brands fa-facebook-messenger me-2 "></i></div>
+              <div class="me-2" ><i class="fa-brands fa-facebook-messenger me-2 "></i></div>
             </a>
+        </div>
 
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Log In</a></li>
-              <li><a class="dropdown-item" href="#">Log out</a></li>
-            </ul>
-          </div>
-
-        <div class="dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="" alt="" width="35" height="35" class="me-2"><span>Mosharrof Hosain</span>
-            </a>
-
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Log In</a></li>
-              <li><a class="dropdown-item" href="#">Log out</a></li>
-            </ul>
+        <div >
+            <img src="" alt="" width="35" height="35" class="me-2"><span>Mosharrof Hosain</span>
+            <a class="btn btn-secondary mx-3"  href="<?= base_url('logout')?>">Log out</a>
           </div>
       </div>
     </div>
@@ -209,7 +181,7 @@
                         <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><span>New...</span></a></li>
                         <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><span>Profile</span></a></li>
                         <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><span>Settings</span></a></li>
-                        <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><span>Sign out</span></a></li>
+                        <li><a href="<?= base_url('logout')?>" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><span>Sign out</span></a></li>
                     </ul>
                     </div>
                 </li>
@@ -229,8 +201,19 @@
     
 </section>
 
+    <script>
+      $(document).ready( function () {
+          $('#data-table').DataTable();
+       } );
+     </script>
 
-<script src="<?=base_url("jQuery.js"); ?> "></script>
+<script src="<?=base_url("jQuery.js")?> "></script>
+
+    <!--------- Data Table----- -->
+<script src=" https://code.jquery.com/jquery-3.7.0.js "></script>
+<script src=" https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" ></script>
+<script src=" https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script> 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>

@@ -19,7 +19,6 @@ class PaymentController extends BaseController
         ];
         return View("dashboard/page/payment/allpayment", $data);
         
-        
     }
 
     //Add Payment
@@ -44,17 +43,31 @@ class PaymentController extends BaseController
         }
     }
 
+
+    //View single Payment
+    public function singlepayment($id){
+        $payment= new PaymentModel();
+        
+        $data=[
+            "page_title"=>"pay slip",
+            "page_heading" =>"pay slip",
+            'payment' => $payment->join('student',  'student.student_id = payment.student')->where('payment_id', $id)->first(),
+         ];
+        return View('dashboard/page/payment/singlepayment', $data);
+    }
+
+
+    //View All Payment
     public function viewpayment($id){
         $payment= new PaymentModel();
         
         $data=[
-            "page_title"=>"View Payment",
-            "page_heading" =>"View Payment",
-            // 'role' => $user_role->findAll(),
-            'payment' => $payment->select('payment.*')->join('student',  'student.student_id = payment.student')->where('payment_id', $id)->first(),
-            
+            "page_title"=>"View All Payment",
+            "page_heading" =>"View All Payment ",
+            'payments' => $payment->join('student',  'student.student_id = payment.student')->where('student', $id)->findAll(),
+            'student' => $payment->join('student',  'student.student_id = payment.student')->where('student', $id)->first(),
+            'sum' => $payment->where('student', $id)->selectSum('payment', 'sumQuantities')->get()->getRow()->sumQuantities,
          ];
-         
         return View('dashboard/page/payment/viewpayment', $data);
     }
 

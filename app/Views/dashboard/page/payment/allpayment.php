@@ -44,7 +44,8 @@
                     <td><img src="<?= base_url('uploads/img/'.$payment['image']) ?>" width="40"  alt=""></td>
                     <td>
                         <ul class="d-flex list-unstyled m-0"> 
-                            <li><a class="edit btn btn-primary me-2"  href="<?= base_url('dashboard/view_payment/'.$payment['student_id'] ) ?>">View</a></li>
+                            <li><a class="edit btn btn-primary me-2"  href="<?= base_url('dashboard/single_payment/'.$payment['payment_id'] ) ?>"><i class="fa-solid fa-eye"></i></a></li>
+                            <li><a class="edit btn btn-primary me-2"  href="<?= base_url('dashboard/view_payment/'.$payment['student_id'] ) ?>">View All</a></li>
                             <li><a class="edit btn btn-primary"  href="<?= base_url('dashboard/payment/'.$payment['student_id'] ) ?>">payment</a></li>
                         
                         </ul>

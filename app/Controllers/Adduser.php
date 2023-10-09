@@ -83,6 +83,9 @@ class Adduser extends BaseController
                     $password=$this->request->getPost('password');
                     $file = $this->request->getFile('file');
                     $fileName = $file->getRandomName();
+
+                    $password = password_hash($password, PASSWORD_BCRYPT);
+
                     $myData = [
                         "name"=> $name,
                         "username"=> $username,
