@@ -2,12 +2,17 @@
 namespace App\Libraries;
 
 class Auth{
-    public static function setAuth($result){
+    public static function setAuth($userInfo){
         $session = session();
-        $array = ['logged_in' => true];
-        $userdata = $result;
-        $session->set('userdata', $userdata);
-        $session->set($array);
+        $userData = [
+            'id' => $userInfo['user_id'],
+            'name' => $userInfo['name'],
+            'username' => $userInfo['username'],
+            'email' => $userInfo['email'],
+            'image' => $userInfo['image'],
+            'logged_in' => true
+        ];
+        $session->set($userData);
     }
 
     public static function id(){

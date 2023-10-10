@@ -35,7 +35,7 @@
         </div>
 
         <div >
-            <img src="" alt="" width="35" height="35" class="me-2"><span>Mosharrof Hosain</span>
+            <img src="<?= base_url('uploads/img/'.session()->get('image')) ?>" alt="" width="35" height="35" class="me-2"><span><?= session()->get('name') ?></span>
             <a class="btn btn-secondary mx-3"  href="<?= base_url('logout')?>">Log out</a>
           </div>
       </div>
@@ -56,7 +56,7 @@
             </a>
           </div>
           <div class="sidebar-scroll">
-            <ul class="list-unstyled ps-0">
+            <ul class="list-unstyled ps-0"> 
 
                 <li class="mb-1">
                     <a href="<?= base_url()?>dashboard" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 " >
@@ -201,22 +201,20 @@
     
 </section>
 
-    <script>
-      $(document).ready( function () {
-          $('#data-table').DataTable();
-       } );
-     </script>
 
-<script src="<?=base_url("jQuery.js")?> "></script>
 
     <!--------- Data Table----- -->
 <script src=" https://code.jquery.com/jquery-3.7.0.js "></script>
 <script src=" https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" ></script>
 <script src=" https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script> 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script src="<?=base_url("jQuery.js")?> "></script>
+
 </body>
 </html>

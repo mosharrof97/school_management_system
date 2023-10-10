@@ -10,6 +10,8 @@ use App\Models\UserModel;
 class AuthController extends BaseController
 {
     protected $helpers = ['url','form'];
+
+    
     public function index()
     {
         $data =[
@@ -18,7 +20,7 @@ class AuthController extends BaseController
         ];
         return view('dashboard/auth/login', $data);
     }
-
+   
     public function loginhandler(){
         
         $fieldType = filter_var($this->request->getVar('login_id'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
@@ -51,16 +53,16 @@ class AuthController extends BaseController
                         'required' => 'Username is required',
                         'is_not_unique' => 'Username is not exists in our system.',
                     ]
-                    ],
-                    'password'=>[
-                        'rules' =>'required|min_length[6]|max_length[15]',
-                        'errors'=>[
-                            'required' => 'Password is required',
-                            'min_length' => 'Password must have atleast 6 characters in length',
-                            'max_length' => 'Password must not have characters more then 15  in length.',
+                ],
+                'password'=>[
+                    'rules' =>'required|min_length[6]|max_length[15]',
+                    'errors'=>[
+                        'required' => 'Password is required',
+                        'min_length' => 'Password must have atleast 6 characters in length',
+                        'max_length' => 'Password must not have characters more then 15  in length.',
 
-                        ]
                     ]
+                ],
             ]);
         }
 
@@ -78,37 +80,23 @@ class AuthController extends BaseController
             $check_password = Hash::check($this->request->getVar('password'), $userInfo['password']);
 
             if(!$check_password){
-               
                 return redirect()-> route('admin.login.form')-> with('fail', 'wrong Password')->withInput();
             }
             else{
+                // $ses_data = [
+                    
+                //     'isLoggedIn' => true
+                // ];
+                // $session->set($ses_data);
                 Auth::setAuth($userInfo);
                 return redirect()->to('dashboard');
-              
-
             }
         }
     }
 
     public function logouthandler(){
-        // $destroy = $this->session->sess_destroy();
         Auth::forget();
          return redirect()->route('admin.login.form')->with('fail','You are logged out!');
-
-        // $this->session->unset_userdata(array('username','user_id'));
-        // $this->session->sess_destroy();
-        // echo alert('logout');
-
-        // $this->session->unset_userdata('logged_in');
-        // $this->session->unset_userdata('user_id');
-        // $this->session->unset_userdata('email');
-
-        // Set message
-        // $this->session->set_flashdata('user_loggedout', 'You are now logged out');
-        // $this->session->sess_destroy();
-
-        // return redirect()->to('login');
-
     }
     
 }
