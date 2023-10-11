@@ -7,7 +7,7 @@
 
 <?= $this->section('content') ;?>
     <div class="row justify-content-center">
-        <div class="col-11">
+        <div class="col-12">
             
         <table class="table ">
             <div class="d-flex justify-content-between my-4"> <h3><?= $page_heading; ?></h3> <a href="<?= base_url()?>dashboard/add_user"class="text-decoration-none btn btn-primary ">Add new</a></div>
