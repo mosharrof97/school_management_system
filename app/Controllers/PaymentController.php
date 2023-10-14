@@ -11,6 +11,7 @@ class PaymentController extends BaseController
     public function index()
     {
         $payment = new PaymentModel;
+        $student = new StudentModel;
         $data=[
             'page_title'=>'All Payment',
             'page_heading' => 'All Payment',  
@@ -59,13 +60,14 @@ class PaymentController extends BaseController
 
     //View All Payment
     public function viewpayment($id){
-        $payment= new PaymentModel();
+        $payment= new PaymentModel();  
         
         $data=[
             "page_title"=>"View All Payment",
             "page_heading" =>"View All Payment ",
             'payments' => $payment->join('student',  'student.student_id = payment.student')->where('student', $id)->findAll(),
             'student' => $payment->join('student',  'student.student_id = payment.student')->where('student', $id)->first(),
+            
             'sum' => $payment->where('student', $id)->selectSum('payment', 'sumQuantities')->get()->getRow()->sumQuantities,
          ];
         return View('dashboard/page/payment/viewpayment', $data);

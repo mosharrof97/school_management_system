@@ -16,6 +16,24 @@ $routes->group('', static function($routes){
     $routes->get('/logout','AuthController::logouthandler');
 });
 
+// $routes->group('',  static function($routes){
+    
+    $routes->get('/', 'HomeController::index' ); 
+
+
+
+// });
+
+
+
+
+
+
+
+
+
+
+
 
 $routes->group('', ['filter'=>'authfilter:auth'], static function($routes){
 

@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*========= Backgrount Variable ==========*/
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --orange :#fe4003;
+    --black:#000000;
+    --gray:#303030;
+}
+
+
+
+/*======== Common Style  start ==========*/
+
+
+html,
+body {
+  font-size: 15px;
+  color: var(--gray);
+  font-family: "Open Sans", sans-serif;
+  vertical-align: baseline;
+  line-height: 26px;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+/*========= Backgrount Color ==========*/
+.bg-blue{ background-color: var(--blue) !important; }
+.bg-white{ background-color: var(--white) !important; }
+.bg-orange{ background-color: var(--orange) !important; }
+.bg-black{ background-color: var(--black) !important; }
+.bg-gray{ background-color: var(--gray) !important; }
+
+/*======== Text Color ==========*/
+.text-blue{ color: var(--blue) !important; }
+.text-white{ color: var(--white) !important; }
+.text-orange{ color: var(--orange) !important; }
+.text-black{ color: var(--black) !important; }
+.text-gray{ color: var(--gray) !important; }
+
+/*========= Div Position  =========*/
+.content-center{  display: flex;  justify-content: center; }
+.content-between{  display: flex;  justify-content: space-between; }
+.content-left{  display: flex;  justify-content: left; }
+.content-right{  display: flex;  justify-content: right; }
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+p {
+  margin: 0 0 26px;
+  line-height: 1.8;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+  color: var(--black);
+  margin: 0 0 26px;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 70px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+h3 {
+  font-size: 26px;
+  font-weight: 700;
+}
+h4 {
+  font-size: 24px;
+  font-weight: 700;
+}
+h5 {
+  font-size: 18px;
+  font-weight: 700;
+}
+h6 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.uppercase {
+    text-transform: uppercase !important;
+  }
+  .capitalize {
+    text-transform: capitalize !important;
+  }
+  .bold-text {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+  }
+  .extra-bold {
+    font-weight: 800 !important;
+  }
+  a {
+    color: var(--blue);
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+    outline: none !important;
+  }
+  a:active,
+  a:hover {
+    text-decoration: none;
+    outline: 0 none;
+    color: var(--blue);
+  }
+  ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+  }
+  .clear {
+    clear: both;
+  }
+  ::-moz-selection {
+    background: #21a7d0;
+    text-shadow: none;
+    color: #ffffff;
+  }
+  ::selection {
+    background: #21a7d0;
+    text-shadow: none;
+    color: #ffffff;
+  }
+  .border-none:last-child {
+    border-right: none !important;
+  }
+/*======== Common Style  End ==========*/
+
+/*================ Preloader ===============*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #5fcf80;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*=============== Disable aos animation delay on mobile devices ================*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*===== Header Section ===========*/
+
+/*======== Top Bar =========*/
+
+.header-style2 {
+    width: 100%;
+    z-index: 999;
+}
+.rs-header {
+z-index: 99;
+}
+.topbar-area {
+    background: #273c66;
+}
+
+.topbar-contact li {
+    display: inline-block;
+    line-height: 50px;
+    height: 50px;
+    margin-right: 17px;
+    padding-right: 20px;
+    color: #ffffff;
+    border-right: 1px solid #374A71;
+}
+.topbar-contact li i {
+margin-right: 2px;
+}
+.topbar-contact li i.flaticon-email:before {
+bottom: -1.5px;
+position: relative;
+}
+.topbar-contact li i:before {
+font-size: 16px;
+color: #ffffff;
+}
+.topbar-contact li a {
+color: #ffffff;
+}
+.topbar-contact li a:hover {
+color: #21a7d0;
+}
+.topbar-contact li a:hover {
+color: #21a7d0;
+}
+.topbar-contact li:last-child {
+margin: 0;
+border: none;
+}
+.topbar-right li {
+display: inline;
+margin-right: 30px;
+}
+
+.topbar-right li {
+display: inline;
+margin-right: 30px;
+}
+.social-icon{
+color: var(--white);
+}
+.social-icon a{
+    margin-right: 10px;
+    font-size: 18px;
+    color: var(--white);
+    
+}
+
+/*==============Manu Bar ==============*/
+.logo-part {
+    position: relative;
+    z-index: 9;
+  }
+  .logo-part img {
+    max-height: 40px;
+    max-width: 40px;
+  }
+
+  #header {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+    box-shadow: 0px 0 18px rgba(55, 66, 59, 0.08);
+  }
+  
+  #header .logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #header .logo a {
+    color: #5fcf80;
+  }
+  
+  #header .logo img {
+    max-height: 40px;
+  }
+  
+
+
+/*========= HOme Page =========*/
+.h-700{
+  height: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+
+  @media (min-width: 992px ){
+    .main-manu{
+        display: flex;     
+        justify-content: space-between;  
+        align-items: center;
+    }
+  }

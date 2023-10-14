@@ -226,7 +226,7 @@ class StudentController extends BaseController
                 ];
 
                 $image->move('uploads/img', $imageName); 
-                print_r($formdata);
+                // print_r($formdata);
                 $student->insert($formdata);
                 $session =  session();
                 $session->setFlashData("success", "Successful Registration");
@@ -235,7 +235,6 @@ class StudentController extends BaseController
             }else{
                 $data["validation"] = $validation->getErrors();
                 echo "data Invalid";
-
             }
         }
         return View('dashboard/page/student/add_student', $data);
@@ -406,7 +405,7 @@ class StudentController extends BaseController
                 'course'=>$course, 'batch'=>$batch,	'branch'=>$branch, 'course_fee'=>$course_fee, 'file'=>$image ,
             ];
 
-            if($validation->run($validData)){ 
+            // if($validation->run($validData)){ 
                 $formdata = [
                     'name'=>$name,	
                     'number'=>$number, 
@@ -438,10 +437,10 @@ class StudentController extends BaseController
                 $session->setFlashData("success", "Successful Registration");
                 return redirect()->to("/dashboard/all_student");
 
-            }else{
-                $data["validation"] = $validation->getErrors();
-                // echo "data Invalid";
-            }
+            // }else{
+            //     $data["validation"] = $validation->getErrors();
+            //     // echo "data Invalid";
+            // }
         }
         return View('dashboard/page/student/update_student', $data);
     }

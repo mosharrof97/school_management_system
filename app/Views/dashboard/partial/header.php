@@ -28,7 +28,7 @@
    <!-------Dashboard Css -------->
 </head>
 
-<body>
+<body id="body" >
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
@@ -50,8 +50,8 @@
         <div class="">
             <a href="/dashboard" class="d-flex flex-column align-items-center py-2 link-body-emphasis text-decoration-none  ">
             
-              <img src="" alt="" width="60" height="60" class="rounded-circle">
-              <span class="fs-5 fw-semibold">Mosharrof Hosain</span>
+              <img src="<?= base_url('uploads/img/'.session()->get('image')) ?>" alt="" width="60" height="60" class="rounded-circle">
+              <span class="fs-5 fw-semibold"><?= session()->get('name') ?></span>
             </a>
         </div>
         <!----- Profile End------>
