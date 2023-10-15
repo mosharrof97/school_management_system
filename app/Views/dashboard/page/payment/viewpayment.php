@@ -52,7 +52,7 @@
                         <tr class="border">
                             <th>payment Date</th>
                             <th>course Fee</th>
-                            <th>Due payment</th>
+                            <th>Due</th>
                             <th>payment</th>
                         </tr>
                         

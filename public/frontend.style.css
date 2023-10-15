@@ -294,17 +294,200 @@ color: var(--white);
   
 
 
-/*========= HOme Page =========*/
+/*========= Home Page =========*/
 .h-700{
   height: 600px;
 }
 
+/*======== Home Slider Start ========*/
+.carousel-caption {
+  position: absolute;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: var(--white);
+  top: 130px;
+  left: 10%;
+  text-align: left;
+}
+.slider-sub-title {
+  font-size: 48px;
+  line-height: 58px;
+  font-family: 'Nunito', sans-serif;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.slider-title {
+  font-size: 90px;
+  line-height: 100px;
+  color: var(--white);
+  margin-bottom: 39px;
+  margin-left: -5px;
 
+}
+.slider-button{
+  outline: none;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 3px;
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  background: #21a7d0;
+  position: relative;
+  overflow: hidden;
+}
+/*======== Home Slider End ========*/
 
+/*========== Video Section ===========*/
+.video {
+  position: relative;
+  height: 100%;
+  min-height: 500px;
+  background: linear-gradient(rgba(15, 23, 43, .1), rgba(15, 23, 43, .1)), url(frontend.assets/img/video.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.video .btn-play {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-sizing: content-box;
+  display: block;
+  width: 32px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  padding: 18px 20px 18px 28px;
+}
+.video .btn-play:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: var(--orange);
+  border-radius: 50%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+.video .btn-play span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-left: 32px solid var(--black);
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+}
+.video .btn-play:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: var(--orange);
+  border-radius: 50%;
+  transition: all 200ms;
+}
 
+#videoModal {
+  z-index: 99999;
+}
+#videoModal .modal-dialog {
+  position: relative;
+  max-width: 800px;
+  margin: 60px auto 0 auto;
+}
+#videoModal .modal-body {
+  position: relative;
+  padding: 0px;
+}
 
+/*** Footer ***/
 
+.footer {
+  /* margin-top: 10px;
+  padding-top: 180px; */
+}
 
+.footer .btn.btn-social {
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  border: 1px solid #FFFFFF;
+  border-radius: 35px;
+  transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+  color: var(--orange);
+}
+
+.footer .btn.btn-link {
+  display: block;
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: left;
+  color: var(--white);
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: capitalize;
+  transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+  position: relative;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+  letter-spacing: 1px;
+  box-shadow: none;
+}
+
+.footer .copyright {
+  padding: 25px 0;
+  font-size: 15px;
+  border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+  color: var(--white);
+}
+
+.footer .footer-menu a {
+  margin-right: 15px;
+  padding-right: 15px;
+  border-right: 1px solid rgba(255, 255, 255, .3);
+}
+
+.footer .footer-menu a:last-child {
+  margin-right: 0;
+  padding-right: 0;
+  border-right: none;
+}
 
 
 

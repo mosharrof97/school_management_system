@@ -42,12 +42,20 @@
                         <tr class="border">
                             <th class="border">payment Date</th>
                             <th class="border">course Fee</th>
+                            <th class="border">Due</th>
                             <th class="border">payment</th>
                         </tr>
                         <tr class="border">
                             <td class="border"><?= $payment['payment_date']?></td>
-                            <td class="border"><?= $payment['course_fee']?></td>
+                            <td class="border"></td>
+                            <td class="border"></td>
                             <td class="border"><?= $payment['payment']?></td>
+                        </tr>
+                        <tr class="border">
+                            <td class="border">Total :</td>
+                            <td class="border"><?= $payment['course_fee']?></td>
+                            <td class="border"><?=  $sum?></td>
+                            <td class="border"> <?= $payment['payment']?></td>
                         </tr>
                     </div>
                 </table>

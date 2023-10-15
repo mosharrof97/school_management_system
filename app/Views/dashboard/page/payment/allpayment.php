@@ -21,8 +21,7 @@
                 <th scope="col">Batch Name</th>
                 <th scope="col">Branch Name</th>
                 <th scope="col">Course Fee</th>
-                <th scope="col">Paid Payment</th>
-                <th scope="col">Due Payment</th>
+                <th scope="col">Payment Status</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
                 </tr>
@@ -36,10 +35,11 @@
                     <td><?= $payment['number']?></td>
                     <td><?= $payment['course_id']?></td>
                     <td><?= $payment['batch_id']?></td>
-                    <td><?= $payment['branch_id']?></td>
+                    <td><?= $payment['branch_id']?></td> 
                     <td ><?= $payment['course_fee']?></td>
-                    <td ><?= $payment['payment']?></td>
-                    <td >2000</td>
+                    <td >
+                         <?php if($payment['course_fee']== $payment['payment']){echo "<span style='color:green;'>Paid </span>";}else{echo "<span style='color:red;'>Due </span>";}?>
+                    </td>
                     
                     <td><img src="<?= base_url('uploads/img/'.$payment['image']) ?>" width="40"  alt=""></td>
                     <td>

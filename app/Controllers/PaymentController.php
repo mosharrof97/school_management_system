@@ -53,6 +53,7 @@ class PaymentController extends BaseController
             "page_title"=>"pay slip",
             "page_heading" =>"pay slip",
             'payment' => $payment->join('student',  'student.student_id = payment.student')->where('payment_id', $id)->first(),
+            'sum' => $payment->where('student', $id)->selectSum('payment', 'sumQuantities')->get()->getRow()->sumQuantities,
          ];
         return View('dashboard/page/payment/singlepayment', $data);
     }
