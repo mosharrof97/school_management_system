@@ -4,10 +4,6 @@
     <?= $page_title; ?>
 <?= $this->endSection(); ?>
 
-<?= $this->section('title') ;?>
-    <?= $page_heading; ?>
-<?= $this->endSection(); ?> 
-
 <?= $this->section('content') ;?>
 <div class="row justify-content-center">
         <div class="col-8 m-3">

@@ -12,21 +12,61 @@
 <body>
     <div class="row justify-content-center">
             <div class="col-4 m-3">
-                <?= form_open();?> 
+
+                <?php $validation = \Config\Services::validation();?>
+
+                <form action=" <?= route_to('admin.login.handler') //base_url('login')?>" method="post">
                 <div class="d-flex justify-content-between my-4"> <h3><?= $page_heading; ?></h3> </div>
                     
+                <?= csrf_field() ?>
+                    <?php if(!empty(session()->getFlashdata('success'))) : ?>
+                        <div class="alert alert-success">
+                            <?= session()->getFlashdata('success')?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <?php endif ?>
+
+                        <?php if(!empty(session()->getFlashdata('fail'))) : ?>
+                        <div class="alert alert-danger">
+                            <?= session()->getFlashdata('fail')?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <?php endif ?>
+
+
+
+
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username">
+                        <input type="text" class="form-control" id="username" name="login_id" placeholder="Username or Email" value="<?= set_value('login_id')?>">
+                        
+                        <?php if($validation -> getError('login_id')) : ?>
+                            <div class="d-block text-danger" style="" >
+                                <?= $validation -> getError('login_id')?>
+                            </div>
+                        <?php endif ?>
+
                     </div>
+
     
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password">
-                    </div>
+                        <input type="password" class="form-control" id="password" name="password" value="<?= set_value('password')?>">
+                            
+                        <?php if($validation -> getError('password')) : ?>
+                            <div class="d-block text-danger" style="" >
+                                <?= $validation -> getError('password')?>
+                            </div>
+                        <?php endif ?>
                     
-                    <a  type="submit" class="btn btn-primary text-decoration-none" href="<?=base_url()?>dashboard">Submit</a>
-                    <?= form_close();?> 
+                    </div>
+                    <input type="submit" class="btn btn-primary text-decoration-none" value="login">
+                    <!-- <a  type="submit" class="btn btn-primary text-decoration-none" href="">Submit</a> -->
+                    </form>
                 
             </div>
     </div>
