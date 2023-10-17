@@ -13,13 +13,13 @@
               
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control"  id="name" name="name" value="<?= $course['name']?>">
+                    <input type="text" class="form-control"  id="name" name="name" value="<?= $course['course_name']?>">
                     <small class="text-danger"><?= isset($validation["name"]) ? $validation["name"] : null;  ?></small>
                 </div>
 
                 <div class="mb-3">
                     <label for="course-fee" class="form-label">course-fee</label>
-                    <input type="text" class="form-control"  id="course-fee" name="course-fee" value="<?= $course['course_fee']?>">
+                    <input type="text" class="form-control"  id="course-fee" name="course-fee" value="<?= $course['c_course_fee']?>">
                     <small class="text-danger"><?= isset($validation["course-fee"]) ? $validation["course-fee"] : null;  ?></small>
                 </div>
 

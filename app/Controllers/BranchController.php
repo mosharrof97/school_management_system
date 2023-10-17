@@ -33,7 +33,7 @@ class BranchController extends BaseController
             $branch_name = $this->request->getPost('branch-name');
             $address = $this->request->getPost('address');
             $formData=[
-                'name'=>$branch_name,
+                'branch_name'=>$branch_name,
                 'address'=>$address,
             ];
             $branch->insert($formData);
@@ -63,7 +63,7 @@ class BranchController extends BaseController
             $branch_name = $this->request->getPost('branch-name');
             $address = $this->request->getPost('address');
             $formData=[
-                'name'=>$branch_name,
+                'branch_name'=>$branch_name,
                 'address'=>$address,
             ];
             $branch->update($id,$formData);

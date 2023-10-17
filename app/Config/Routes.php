@@ -24,17 +24,6 @@ $routes->group('', static function($routes){
 
 // });
 
-
-
-
-
-
-
-
-
-
-
-
 $routes->group('', ['filter'=>'authfilter:auth'], static function($routes){
 
     //Dashboard

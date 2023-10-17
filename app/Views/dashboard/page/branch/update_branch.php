@@ -13,7 +13,7 @@
               
                 <div class="mb-3">
                     <label for="branch-name" class="form-label">Branch Name</label>
-                    <input type="text" class="form-control"  id="branch-name" name="branch-name" value="<?= $branch['name']?>">
+                    <input type="text" class="form-control"  id="branch-name" name="branch-name" value="<?= $branch['branch_name']?>">
                     <small class="text-danger"><?= isset($validation["branch-name"]) ? $validation["branch-name"] : null;  ?></small>
                 </div>
 

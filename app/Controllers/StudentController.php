@@ -19,7 +19,7 @@ class StudentController extends BaseController
             "page_title"=>"Student registration",
             "page_heading" =>"Student registration",
             // 'students' => $student->orderby('student_id','DESC')->paginate(3, 'group'),
-            'students' => $student->select('student.*, batch_name, course.name as course_name, branch.name as branch_name')->join('batch',  'batch.batch_id = student.batch_id')->join('course',  'course.course_id = student.course_id')->join('branch',  'branch.branch_id = student.branch_id')->orderby('student_id','DESC')->paginate(15, 'group'),
+            'students' => $student->select('student.*, batch_name, course_name, branch_name')->join('batch',  'batch.batch_id = student.batch_id')->join('course',  'course.course_id = student.course_id')->join('branch',  'branch.branch_id = student.branch_id')->orderby('student_id','DESC')->paginate(15, 'group'),
             'pager' => $student->pager,
     ];
         return View('dashboard/page/student/all_student', $data);
@@ -33,7 +33,7 @@ class StudentController extends BaseController
             "page_title"=>"Student registration",
             "page_heading" =>"Student registration",
             // 'role' => $user_role->findAll(),
-            'student' => $student->select('student.*, batch_name, course.name as course_name, branch.name as branch_name')->join('batch',  'batch.batch_id = student.batch_id')->join('course',  'course.course_id = student.course_id')->join('branch',  'branch.branch_id = student.branch_id')->where('student_id', $id)->first(),
+            'student' => $student->select('student.*, batch_name, course_name, branch_name')->join('batch',  'batch.batch_id = student.batch_id')->join('course',  'course.course_id = student.course_id')->join('branch',  'branch.branch_id = student.branch_id')->where('student_id', $id)->first(),
             
          ];
          
@@ -455,7 +455,7 @@ class StudentController extends BaseController
         $data=[
             "page_title"=>"Add Payment",
             "page_heading" =>"Add Payment",
-            'student' => $student->select('student.*, batch_name, course.name as course_name, branch.name as branch_name')->join('batch',  'batch.batch_id = student.batch_id')->join('course',  'course.course_id = student.course_id')->join('branch',  'branch.branch_id = student.branch_id')->where('student_id', $id)->first()
+            'student' => $student->select('student.*, batch_name, course_name,  branch_name')->join('batch',  'batch.batch_id = student.batch_id')->join('course',  'course.course_id = student.course_id')->join('branch',  'branch.branch_id = student.branch_id')->where('student_id', $id)->first()
             
         ];
         return View('dashboard/page/payment/addpayment', $data);

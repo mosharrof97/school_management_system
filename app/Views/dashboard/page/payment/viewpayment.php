@@ -34,7 +34,7 @@
                         </tr>
                         <tr>
                             <td style="width:25%" >Course :</td>
-                            <td style="width:75%" ><?= $student['course_id']?></td>
+                            <td style="width:75%" ><?= $student['course_name']?></td>
                         </tr>
                         <tr>
                             <td style="width:25%" >Course Fee :</td>

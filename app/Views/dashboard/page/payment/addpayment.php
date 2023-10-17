@@ -19,9 +19,16 @@
                 <div class="d-flex justify-content-between">
                     <div style="width:75%; margin-right:5px;">
                         <div class="mb-3">
+                            <input type="hidden" class="form-control" id="name" name="student_id" value="<?= $student['student_id']?>">
+                            <input type="hidden" class="form-control" id="name" name="course_id" value="<?= $student['course_id']?>">
+                            <input type="hidden" class="form-control" id="name" name="batch_id" value="<?= $student['batch_id']?>">
+                            <input type="hidden" class="form-control" id="name" name="branch_id" value="<?= $student['branch_id']?>">
+                        </div>
+
+                        <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="<?= $student['name']?>">
-                            <input type="text" class="form-control" id="name" name="student_id" value="<?= $student['student_id']?>">
+                            <input type="hidden" class="form-control" id="name" name="student_id" value="<?= $student['student_id']?>">
                         </div>
 
                         <div class="mb-3" >

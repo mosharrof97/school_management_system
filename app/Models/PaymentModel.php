@@ -13,7 +13,7 @@ class PaymentModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['payment_id','student','date','payment'];
+    protected $allowedFields    = ['payment_id','student','date','payment','course_id','batch_id','branch_id'];
 
     // Dates
     protected $useTimestamps = false;

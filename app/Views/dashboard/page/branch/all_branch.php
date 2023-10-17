@@ -26,7 +26,7 @@
                 ?>
                 <tr class="align-middle">
                     <td><?= $branchs['branch_id'] ?></td>
-                    <td><?= $branchs['name'] ?></td>
+                    <td><?= $branchs['branch_name'] ?></td>
                     <td><?= $branchs['address'] ?></td>
                     <td>
                         <ul class="d-flex list-unstyled m-0"> 
