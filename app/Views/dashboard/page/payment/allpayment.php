@@ -10,7 +10,7 @@
         <div class="col-11">
             
         <table class="table ">
-            <div class="d-flex justify-content-between my-4"> <h3><?= $page_heading; ?></h3> <a href="<?= base_url()?>dashboard/add_student"class="text-decoration-none btn btn-primary ">Add new</a></div>
+            <div class="d-flex justify-content-between my-4"> <h3><?= $page_heading; ?></h3> <a href="<?= base_url()?>dashboard/all_student"class=" btn btn-primary mx-2 "> All Student</a> </div>
             <thead>
                 <tr>
                 <th scope="col">ID</th>
@@ -21,6 +21,7 @@
                 <th scope="col">Batch Name</th>
                 <th scope="col">Branch Name</th>
                 <th scope="col">Course Fee</th>
+                <th scope="col">Payment</th>
                 <th scope="col">Payment Status</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
@@ -33,12 +34,13 @@
                     <td><?= $payment['payment_date']?></td>
                     <td><?= $payment['name']?></td>
                     <td><?= $payment['number']?></td>
-                    <td><?= $payment['course_id']?></td>
-                    <td><?= $payment['batch_id']?></td>
-                    <td><?= $payment['branch_id']?></td> 
-                    <td ><?= $payment['course_fee']?></td>
-                    <td >
-                         <?php if($payment['course_fee']== $payment['payment']){echo "<span style='color:green;'>Paid </span>";}else{echo "<span style='color:red;'>Due </span>";}?>
+                    <td><?= $payment['course_name']?></td>
+                    <td><?= $payment['batch_name']?></td>
+                    <td><?= $payment['branch_name']?></td> 
+                    <td><?= $payment['course_fee']?></td>
+                    <td><?= $payment['totalPayment']?></td>
+                    <td>
+                         <?php if($payment['course_fee']<= $payment['totalPayment']){echo "<span style='color:green;'>Paid </span>";}else{echo "<span style='color:red;'>Due </span>";}?>
                     </td>
                     
                     <td><img src="<?= base_url('uploads/img/'.$payment['image']) ?>" width="40"  alt=""></td>

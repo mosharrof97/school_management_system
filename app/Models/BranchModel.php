@@ -13,7 +13,7 @@ class BranchModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['branch_id','name','address'];
+    protected $allowedFields    = ['branch_id','branch_name','address'];
 
     // Dates
     protected $useTimestamps = false;

@@ -29,7 +29,7 @@
                         </tr>
                         <tr>
                             <td style="width:20%" >Course Fee :</td>
-                            <td style="width:80%"  ><?= $payment['course_id']?></td>
+                            <td style="width:80%"  ><?= $payment['course_name']?></td>
                         </tr>
                         <tr>
                             <td style="width:20%" >Course Fee :</td>

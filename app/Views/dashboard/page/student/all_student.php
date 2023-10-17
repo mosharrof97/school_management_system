@@ -20,6 +20,7 @@
                 <th scope="col">Batch Name</th>
                 <th scope="col">Branch Name</th>
                 <th scope="col">Course Fee</th>
+                <th scope="col">Payment Status</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
                 </tr>
@@ -36,6 +37,7 @@
                     <td><?= $student['course_name'] ?></td>
                     <td><?= $student['batch_name'] ?></td>
                     <td><?= $student['branch_name'] ?></td>
+                    <td><?= $student['course_fee'] ?></td>
                     <td><?= $student['course_fee'] ?></td>
                     <td><img src="<?= base_url('uploads/img/'.$student['image']) ?>" width="40"  alt=""></td>
                     <td>

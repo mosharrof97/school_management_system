@@ -31,8 +31,8 @@ class CourseController extends BaseController
             $name = $this->request->getPost('name');
             $coursefee = $this->request->getPost('course-fee');
             $formData=[
-                    'name'=>$name,
-                    'course_fee'=>$coursefee,
+                    'course_name'=>$name,
+                    'c_course_fee'=>$coursefee,
             ];
             $course->insert($formData);
         }
@@ -70,8 +70,8 @@ class CourseController extends BaseController
         $name = $this->request->getPost("name");
         $courseFee= $this->request->getPost("course-fee");
         $formData =[
-            "name" => $name,
-            "course_fee" => $courseFee,
+            "course_name" => $name,
+            "c_course_fee" => $courseFee,
         ];
 
         $course->update($id,$formData );
