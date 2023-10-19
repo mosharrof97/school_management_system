@@ -39,7 +39,16 @@
     <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img">
-            <img src="../assets/images/logos/dark-logo.svg" width="180" alt="" />
+            <!-- <img src="../assets/images/logos/dark-logo.svg" alt="Mosharrof" width="180" alt="" /> -->
+
+            <?php
+                    use App\Models\LogoModel;
+                    $logos = new LogoModel();
+                    $logo= $logos->first();
+                ?>
+
+            <img class="" src="<?= base_url('uploads/logo/'.$logo['logo_image']) ?>" width="100"  alt="">
+            
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -66,7 +75,7 @@
             </li>
 
             <li class="sidebar-item">
-                <a href="<?= base_url()?>/dashboard" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 " >
+                <a href="<?= base_url()?>dashboard" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 " >
                     <i class="fa-solid fa-gauge btn-icon"></i><span> Dashboard</span>
                 </a>
             </li>
@@ -85,7 +94,7 @@
                         <li><a href="<?= base_url()?>dashboard/all_user" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Users</span></a></li>
                         <li><a href="<?= base_url()?>dashboard/add_user" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add user</span></a></li>
                         <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete User</span></a></li>
-                        <li><a href="<?= base_url()?>/dashboard/all_role" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Role</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/all_role" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Role</span></a></li>
                         <li><a href="<?= base_url()?>dashboard/add_role" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Role</span></a></li>
                     </ul>
                 </div>
@@ -136,8 +145,8 @@
                 </button>
                 <div class="collapse" id="branch-collapse" style="">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
-                        <li><a href="<?= base_url()?>/dashboard/all_branch" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Branchs</span></a></li>
-                        <li><a href="<?= base_url()?>/dashboard/add_branch" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Branch</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/all_branch" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Branchs</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_branch" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Branch</span></a></li>
                         <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Branch</span></a></li>
                     </ul>
                 </div>
@@ -184,15 +193,33 @@
 
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Dynamic Data</span>
+            </li>
+
+            <li class="sidebar-item">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#logo-slider" aria-expanded="false">
+                    <i class="fa-solid fa-bell btn-icon"></i><span> Logo & Home Slider</span>
+                </button>
+                    <div class="collapse" id="logo-slider" style="">
+                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                        <li><a href="<?= base_url()?>dashboard/logo_slider_view" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i> <span>View Logo & slider</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/all_slider_content" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i> <span> All slider Content</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_slider" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i> <span> Add slider Content</span></a></li>
+                      </ul>
+                </div>
+            </li>
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">AUTH</span>
             </li>
 
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+              <a class="sidebar-link" href="<?= base_url('logout')?>" aria-expanded="false">
                 <span>
                   <i class="ti ti-login"></i>
                 </span>
-                <span class="hide-menu">Login</span>
+                <span class="hide-menu">Logout</span>
               </a>
             </li>
             

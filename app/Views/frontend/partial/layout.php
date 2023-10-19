@@ -69,7 +69,15 @@
                     <div class="d-flex flex-wrap align-items-center  justify-content-between">
                         <div>
                             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                                <img src="" width="40" height="32"  alt="Mosharrof" sizes="" srcset="">
+
+                                <?php
+                                    use App\Models\LogoModel;
+                                    $logos = new LogoModel();
+                                    $logo= $logos->first();
+                                ?>
+
+                            <img class="" src="<?= base_url('uploads/logo/'.$logo['logo_image']) ?>" width="100"  alt="">
+                                <!-- <img src="" width="40" height="32"  alt="Mosharrof" sizes="" srcset=""> -->
                             </a>
                         </div>
                         <div class="d-flex flex-wrap align-items-center justify-content-between">

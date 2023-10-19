@@ -109,6 +109,26 @@ $routes->group('', ['filter'=>'authfilter:auth'], static function($routes){
     // $routes->post('/dashboard/update_student/(:num)','PaymentController::update/$1');
     // $routes->get('/dashboard/delete_student/(:num)','PaymentController::delete/$1');
 
+    //Frontend 
+    //logo
+    $routes->get('/dashboard/logo_slider_view','FrontendController::logoView');
+
+
+    $routes->get('/dashboard/add_logo/(:num)','FrontendController::logoEdit/$1');
+    $routes->post('/dashboard/add_logo/(:num)','FrontendController::logoUpdate/$1');
+
+    // $routes->get('/dashboard/view_student/(:num)','FrontendController::viewstudent/$1');
+    // $routes->get('/dashboard/delete_student/(:num)',    'FrontendController::delete/$1');
+
+    //Slider
+    $routes->get('/dashboard/all_slider_content','FrontendController::allSliderContent');
+    $routes->get('/dashboard/add_slider','FrontendController::addslider');
+    $routes->post('/dashboard/add_slider','FrontendController::addslider');
+
+    $routes->get('/dashboard/update_student/(:num)','FrontendController::edit/$1');
+    $routes->post('/dashboard/update_student/(:num)','FrontendController::update/$1');
+    $routes->get('/dashboard/view_student/(:num)','FrontendController::viewstudent/$1');
+    $routes->get('/dashboard/delete_student/(:num)',    'FrontendController::delete/$1');
 });
 
 

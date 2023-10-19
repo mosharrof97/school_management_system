@@ -4,25 +4,25 @@
     <section>
         <div id="carouselExampleInterval" class="carousel slide position-relative" data-bs-ride="carousel" >
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="<?= base_url('frontend.assets\img\h2-1.jpg')?>" class="d-block w-100 " alt="...">
+            <?php 
+                if(count($homesliders)>0){
+                    foreach ($homesliders as $homeslider ) {              
+                ?>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    
+                    <img src="<?= base_url('uploads/slider/'.$homeslider['slider_image']) ?>" class="d-block w-100 " alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5 class="slider-sub-title">World Leading University</h5>
-                        <h2 class="slider-title">Educavo University.</h2>
-                        <button class="slider-button"> Discover More</button>
+                        <h5 class="slider-sub-title"><?= $homeslider['slider_sub_title'] ?></h5>
+                        <h2 class="slider-title"><?= $homeslider['slider_title'] ?></h2>
+                        <a href="<?= $homeslider['slider_btn_link'] ?>" class="slider-button"> Discover More</a>
                     </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="<?= base_url('frontend.assets\img\h2-2.jpg')?>" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="slider-sub-title">World Leading University</h5>
-                        <h2 class="slider-title">Educavo University.</h2>
-                        <button class="slider-button"> Discover More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="position-absolute">
+                <?php
+                    }
+                }
+                ?>
 
+            <div class="position-absolute">
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

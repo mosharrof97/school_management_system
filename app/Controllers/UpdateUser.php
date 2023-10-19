@@ -51,7 +51,6 @@ class UpdateUser extends BaseController
                     $role=$this->request->getPost('role');
                     $file = $this->request->getFile('image');
                     $fileName = $file->getRandomName();
-                    // $fileName ='user_'.time().'_'.rand(100000,10000000).'.'.pathinfo($file,PATHINFO_EXTENSION);
 
 
                     $myData=[
