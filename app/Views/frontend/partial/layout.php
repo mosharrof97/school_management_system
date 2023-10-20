@@ -64,11 +64,11 @@
             <!-- Topbar Area End -->
 
             <!--=========Manu bar =========-->
-            <header class="p-3 text-bg-dark sticky-top">
+            <header class="p-3 text-bg-white">
                 <div class="container">
                     <div class="d-flex flex-wrap align-items-center  justify-content-between">
                         <div>
-                            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                            <a href="/" class=" logo-part d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
 
                                 <?php
                                     use App\Models\LogoModel;
@@ -76,21 +76,21 @@
                                     $logo= $logos->first();
                                 ?>
 
-                            <img class="" src="<?= base_url('uploads/logo/'.$logo['logo_image']) ?>" width="100"  alt="">
+                            <img class="" src="<?= base_url('uploads/logo/'.$logo['logo_image']) ?>"   alt="">
                                 <!-- <img src="" width="40" height="32"  alt="Mosharrof" sizes="" srcset=""> -->
                             </a>
                         </div>
                         <div class="d-flex flex-wrap align-items-center justify-content-between">
                             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                                <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-                                <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-                                <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-                                <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-                                <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                                <li><a href="#" class="nav-link px-4 text-black">Home</a></li>
+                                <li><a href="#" class="nav-link px-4 text-black">Features</a></li>
+                                <li><a href="#" class="nav-link px-4 text-black">Pricing</a></li>
+                                <li><a href="#" class="nav-link px-4 text-black">FAQs</a></li>
+                                <li><a href="#" class="nav-link px-4 text-black">About</a></li>
                             </ul>
 
                             <div class="text-end">
-                                <button type="button" class="btn btn-outline-light me-2">Login</button>
+                                <button type="button" class="btn btn-prime me-2">Login</button>
                             </div>
                         </div>
                     </div>

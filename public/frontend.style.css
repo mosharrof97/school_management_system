@@ -48,6 +48,31 @@ body {
 .content-left{  display: flex;  justify-content: left; }
 .content-right{  display: flex;  justify-content: right; }
 
+/*=========== Button CSS ===========*/
+.btn-prime{
+  font-size: 16px;
+  color: var(--white);
+  border: 1px solid var(--orange);
+  background-color: var(--orange);
+}
+.btn-prime:hover{
+  color: var(--orange);
+  border:1px solid var(--orange);
+  background-color: var(--white);
+}
+
+.btn-price{
+  font-size: 16px;
+  color: var(--white);
+  padding: 5px 11px;
+  margin: 0;
+  border: 1px solid var(--orange);
+  border-radius: 5px;
+  background-color: var(--orange);
+}
+
+
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -68,7 +93,6 @@ h5,
 h6 {
   font-family: "Raleway", sans-serif;
   color: var(--black);
-  margin: 0 0 26px;
   line-height: 1.2;
 }
 h1 {
@@ -252,7 +276,6 @@ color: var(--white);
     margin-right: 10px;
     font-size: 18px;
     color: var(--white);
-    
 }
 
 /*==============Manu Bar ==============*/
@@ -261,8 +284,8 @@ color: var(--white);
     z-index: 9;
   }
   .logo-part img {
-    max-height: 40px;
-    max-width: 40px;
+    max-height: 100px;
+    max-width: 80px;
   }
 
   #header {
@@ -291,8 +314,6 @@ color: var(--white);
   #header .logo img {
     max-height: 40px;
   }
-  
-
 
 /*========= Home Page =========*/
 .h-700{
@@ -338,6 +359,13 @@ color: var(--white);
   background: #21a7d0;
   position: relative;
   overflow: hidden;
+}
+.future-icon{
+  font-size: 26px;
+}
+.future-text{
+  font-size: 17px;
+  font-weight: 600;
 }
 /*======== Home Slider End ========*/
 
@@ -413,7 +441,7 @@ color: var(--white);
   max-width: 800px;
   margin: 60px auto 0 auto;
 }
-#videoModal .modal-body {
+#videoModal .modal-body { 
   position: relative;
   padding: 0px;
 }

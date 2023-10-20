@@ -132,7 +132,7 @@
                         <select class="form-select" aria-label="Default select example" id="course" name="course">
                             <option ></option>
                             <?php foreach($course as $row ): ?>
-                            <option value="<?= $row['course_id']?>" <?= $row['course_id'] == $row['course_id'] ? "selected": ""?>><?= $row['name']?></option>
+                            <option value="<?= $row['course_id']?>" <?= $row['course_id'] == $row['course_id'] ? "selected": ""?>><?= $row['course_name']?></option>
                             <?php endforeach ?>
                         </select>
                         <small class="text-danger"><?= isset($validation['course']) ? $validation['course'] : null ;  ?></small>
@@ -157,7 +157,7 @@
                         <select class="form-select" aria-label="Default select example" id="branch" name="branch">
                             <option></option>
                             <?php foreach($branch as $row ): ?>
-                            <option value="<?= $row['branch_id']?>"  <?= $row['branch_id'] == $row['branch_id'] ? "selected": ""?> ><?= $row['name']?></option>
+                            <option value="<?= $row['branch_id']?>"  <?= $row['branch_id'] == $row['branch_id'] ? "selected": ""?> ><?= $row['branch_name']?></option>
                             <?php endforeach ?>
                         </select>
                         <small class="text-danger"><?= isset($validation['branch']) ? $validation['branch'] : null ;  ?></small>

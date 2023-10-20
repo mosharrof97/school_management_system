@@ -15,5 +15,7 @@ class AdminController extends BaseController
         return view('dashboard/page/dashboard', $data);
         
     }
+
+    
     
 }

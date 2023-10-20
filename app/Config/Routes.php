@@ -19,6 +19,8 @@ $routes->group('', static function($routes){
 // $routes->group('',  static function($routes){
     
     $routes->get('/', 'HomeController::index' ); 
+    $routes->get('/apply-student', 'HomeController::applystudent' ); 
+    $routes->post('/apply-student', 'HomeController::applystudent' ); 
 
 
 

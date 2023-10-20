@@ -390,8 +390,6 @@ class StudentController extends BaseController
             $batch = $this->request->getPost('batch');
             $branch = $this->request->getPost('branch');
             $course_fee = $this->request->getPost('course_fee');
-            $image = $this->request->getFile('file');
-            $imageName = $image->getRandomName();
 
             $validData=[
                 'name'=>$name,	
@@ -402,7 +400,7 @@ class StudentController extends BaseController
                 'district'=>$district,	'address'=>$address, 'college-name'=>$college_name,	
                 'hsc-roll'=>$hsc_roll,	'hsc-reg'=>$hsc_reg, 'hsc-gpa'=>$hsc_gpa, 
                 'school-name'=>$school_name, 'ssc-roll'=>$ssc_roll,	'ssc-reg'=>$ssc_reg, 'ssc-gpa'=>$ssc_gpa, 
-                'course'=>$course, 'batch'=>$batch,	'branch'=>$branch, 'course_fee'=>$course_fee, 'file'=>$image ,
+                'course'=>$course, 'batch'=>$batch,	'branch'=>$branch, 'course_fee'=>$course_fee, 
             ];
 
             // if($validation->run($validData)){ 
@@ -428,10 +426,9 @@ class StudentController extends BaseController
                     'batch_id'=>$batch,	
                     'branch_id'=>$branch, 
                     'course_fee'=>$course_fee, 
-                    'image'=>$imageName
+                    
                 ];
 
-                $image->move('uploads/img', $imageName); 
                 $student->update($id,$formdata);
                 $session =  session();
                 $session->setFlashData("success", "Successful Registration");

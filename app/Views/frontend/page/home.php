@@ -36,29 +36,29 @@
         <div class=" row ">
             <div class=" bg-orange col-3">
                 <div class="text-center p-5">
-                    <div><i class="fa-solid fa-building-columns"></i></div>
-                    <div>University Life</div>
+                    <div><i class="fa-solid fa-hospital-user future-icon"></i></div>
+                    <div class="future-text">Extra Care</div>
                 </div>
             </div>
 
             <div class="bg-blue col-3">
                 <div class="text-center p-5">
-                    <div><i class="fa-solid fa-building-columns"></i></div>
-                    <div>University Life</div>
+                    <div><i class="fa-solid fa-pen-nib future-icon"></i></div>
+                    <div class="future-text">daily exam</div>
                 </div>
             </div>
 
             <div class="bg-white col-3">
                 <div class="text-center p-5">
-                    <div><i class="fa-solid fa-building-columns"></i></div>
-                    <div>University Life</div>
+                    <div><i class="fa-solid fa-book-open-reader future-icon"></i></div>
+                    <div class="future-text">Extra Class</div>
                 </div>
             </div>
 
             <div class="bg-orange col-3">
                 <div class="text-center p-5">
-                    <div><i class="fa-solid fa-building-columns"></i></div>
-                    <div>University Life</div>
+                    <div><i class="fa-solid fa-person-chalkboard future-icon"></i></div>
+                    <div class="future-text">solve class</div>
                 </div>
             </div>
         </div>
@@ -113,6 +113,7 @@
             </div>
         </div>
     </section>
+
     <!-- About End -->
     <section class="my-5">
         <div class="container ">
@@ -129,20 +130,20 @@
                     <div class="row">
                         <div class=" col-4 ">
                             <div class=" border  text-center  bg-white mx-1 p-5">
-                                <h2>2K+</h2>
+                                <h2><?= $count ?>+</h2>
                                 <h3>Students</h3>
                             </div>
                         </div>
                         <div class="col-4  ">
                             <div class=" border  text-center bg-blue mx-1 p-5">
-                                <h2>2K+</h2>
-                                <h3>Students</h3>
+                                <h2><?= $course_count ?></h2>
+                                <h3>Course</h3>
                             </div>
                         </div>
                         <div class="col-4  ">
                             <div class=" border  text-center bg-orange mx-1 p-5">
-                                <h2>2K+</h2>
-                                <h3>Students</h3>
+                                <h2><?= $branch_count ?></h2>
+                                <h3>Branch</h3>
                             </div>
                         </div>
                     </div>
@@ -163,70 +164,42 @@
         </div>
     </section>
 
+    <!--============== Course Section ===============-->
     <section class="my-5 py-5 " style="background: #f3f8f9;">
         <div class="container ">
             <div class="row" >
                 <div class="col-4 my-2  d-flex  align-items-center">
                     <div class="">
-                        <h4>DEGREE CATEGORIS</h4>
-                        <h2>Successfully Complete A Degree at Educavo University</h2>
+                        <h5 class="text-gray mb-4">Varsity Coaching Centre</h5>
+                        <h2 class="text-orange">A quality coaching center to get chances in university. Our courses.</h2>
                     </div>
                 </div>
 
+                <?php 
+                if(count($courses)>0){
+                    foreach ($courses as $course ) {              
+                ?>
                 <div class="col-4 my-2">
                     <div class="card m-1">
-                        <img src="<?= base_url('frontend.assets\img\degress-1.jpg')?>" class="card-img-top" alt="...">
+                        <img src="<?= base_url('uploads/img/'.$course['course_image']) ?>" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <h5 class="card-title"><?= $course['course_name'] ?></h5>
+                            <p class="card-text"><?= $course['course_desc'] ?></p>
+                            <div class="content-between align-items-center;">
+                                <div>
+                                    <p class=" btn-price"><?= $course['c_course_fee'] ?> /=</p>
+                                </div>
+                                <div>
+                                    <a href="<?= base_url('apply-student' ) ?>" class="btn btn-prime">Apply Now</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-4 my-2">
-                    <div class="card">
-                        <img src="<?= base_url('frontend.assets\img\degress-2.jpg')?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-4 my-2">
-                    <div class="card">
-                        <img src="<?= base_url('frontend.assets\img\degress-3.jpg')?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-4 my-2">
-                    <div class="card">
-                        <img src="<?= base_url('frontend.assets\img\degress-4.jpg')?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-4 my-2">
-                    <div class="card">
-                        <img src="<?= base_url('frontend.assets\img\degress-5.jpg')?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
+                <?php 
+                    }
+                }
+                ?>
             </div>
         </div>
     </section>
@@ -237,11 +210,11 @@
             <div class="row g-0">
                 <div class="col-md-6 bg-dark d-flex align-items-center">
                     <div class="p-5">
-                        <h6 class="section-title text-start text-white text-uppercase mb-3">Luxury Living</h6>
-                        <h1 class="text-white mb-4">Discover A Brand Luxurious Hotel</h1>
+                        <h6 class="section-title text-start text-white text-uppercase mb-3">Quality education</h6>
+                        <h2 class="text-white mb-4">Discover A Standard educational institution</h2>
                         <p class="text-white mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <a href="" class="btn btn-primary py-md-3 px-md-5 me-3">Our Rooms</a>
-                        <a href="" class="btn btn-light py-md-3 px-md-5">Book A Room</a>
+                        <a href="<?= base_url('course' ) ?>" class="btn btn-prime py-md-3 px-md-5 me-3">Our Course</a>
+                        <a href="<?= base_url('apply-student' ) ?>" class="btn btn-prime py-md-3 px-md-5">Apply</a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -264,8 +237,9 @@
                     <div class="modal-body">
                         <!-- 16:9 aspect ratio -->
                         <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                                allow="autoplay"></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ff1U1Kl7DgQ?si=BpqF3TfFUB-Gi3BP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen  ></iframe>
+                            <!-- <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
+                                allow="autoplay"></iframe> -->
                         </div>
                     </div>
                 </div>

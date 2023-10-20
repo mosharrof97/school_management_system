@@ -20,7 +20,7 @@
                     
                 <?= csrf_field() ?>
                     <?php if(!empty(session()->getFlashdata('success'))) : ?>
-                        <div class="alert alert-success">
+                        <div class="alert alert-success d-flex justify-content-between">
                             <?= session()->getFlashdata('success')?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -29,16 +29,13 @@
                         <?php endif ?>
 
                         <?php if(!empty(session()->getFlashdata('fail'))) : ?>
-                        <div class="alert alert-danger">
+                        <div class="alert alert-danger d-flex justify-content-between">
                             <?= session()->getFlashdata('fail')?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <?php endif ?>
-
-
-
 
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>

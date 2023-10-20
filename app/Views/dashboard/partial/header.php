@@ -56,173 +56,158 @@
         </div>
         <!----- Profile ------>
         
-        <div class="">
-            <a href="/dashboard" class="d-flex flex-column align-items-center py-2 link-body-emphasis text-decoration-none  ">
+        <!-- <div class="">
+            <a href="/dashboard" class="profile d-flex flex-column align-items-center py-2  text-decoration-none  ">
             
               <img src="<?= base_url('uploads/img/'.session()->get('image')) ?>" alt="" width="60" height="60" class="rounded-circle">
               <span class="fs-5 fw-semibold"><?= session()->get('name') ?></span>
             </a>
-        </div>
+        </div> -->
         <!----- Profile End------>
 
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
           <ul id="sidebarnav">
 
-            <li class="nav-small-cap">
+            <li class="nav-small-cap custom-border">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">Home</span>
             </li>
 
-            <li class="sidebar-item">
+            <li class="sidebar-item custom-border ps-2">
                 <a href="<?= base_url()?>dashboard" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 " >
                     <i class="fa-solid fa-gauge btn-icon"></i><span> Dashboard</span>
                 </a>
             </li>
 
-            <li class="nav-small-cap">
+            <li class="nav-small-cap custom-border">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">UI COMPONENTS</span>
             </li>
 
-            <li class="sidebar-item">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#user-collapse" aria-expanded="false">
+            <li class="sidebar-item custom-border">
+                <button class="custom-padding btn btn-toggle  d-inline-flex align-items-center rounded border-0 collapsed " data-bs-toggle="collapse" data-bs-target="#user-collapse" aria-expanded="false">
                     <i class="fa-solid fa-user btn-icon"></i><span> User</span>
                 </button>
                 <div class="collapse" id="user-collapse" style="">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
-                        <li><a href="<?= base_url()?>dashboard/all_user" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Users</span></a></li>
-                        <li><a href="<?= base_url()?>dashboard/add_user" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add user</span></a></li>
-                        <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete User</span></a></li>
-                        <li><a href="<?= base_url()?>dashboard/all_role" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Role</span></a></li>
-                        <li><a href="<?= base_url()?>dashboard/add_role" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Role</span></a></li>
+                    <ul class="list-bg-color btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                        <li><a href="<?= base_url()?>dashboard/all_user" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Users</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_user" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add user</span></a></li>
+                        <li><a href="#" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete User</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/all_role" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Role</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_role" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Role</span></a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="sidebar-item">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#student-collapse" aria-expanded="false">
+            <li class="sidebar-item custom-border">
+                <button class="custom-padding btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#student-collapse" aria-expanded="false">
                     <i class="fa-solid fa-graduation-cap btn-icon"></i><span> Student</span>
                 </button>
                 <div class="collapse" id="student-collapse" style="">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
-                        <li><a href="<?= base_url()?>dashboard/all_student" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Students</span></a></li>
-                        <li><a href="<?= base_url()?>dashboard/add_student" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Student</span></a></li>
-                        <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Student</span></a></li>
+                    <ul class="list-bg-color btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                        <li><a href="<?= base_url()?>dashboard/all_student" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Students</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_student" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Student</span></a></li>
+                        <li><a href="#" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Student</span></a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="sidebar-item">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#course-collapse" aria-expanded="false">
+            <li class="sidebar-item custom-border">
+                <button class="custom-padding btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#course-collapse" aria-expanded="false">
                     <i class="fa-brands fa-discourse btn-icon"></i><span> Course</span>
                 </button>
                 <div class="collapse" id="course-collapse" style="">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
-                        <li><a href="<?= base_url()?>dashboard/all_course" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Courses</span></a></li>
-                        <li><a href="<?= base_url()?>dashboard/add_course" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Course</span></a></li>
-                        <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Course</span></a></li>
+                    <ul class="list-bg-color btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                        <li><a href="<?= base_url()?>dashboard/all_course" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Courses</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_course" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Course</span></a></li>
+                        <li><a href="#" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Course</span></a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="sidebar-item">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#batch-collapse" aria-expanded="false">
+            <li class="sidebar-item custom-border">
+                <button class="custom-padding btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#batch-collapse" aria-expanded="false">
                     <i class="fas fa-users btn-icon"></i><span> Batch</span>
                 </button>
                 <div class="collapse" id="batch-collapse" style="">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
-                        <li><a href="<?= base_url()?>dashboard/all_batch" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Batchs</span></a></li>
-                        <li><a href="<?= base_url()?>dashboard/add_batch" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Batch</span></a></li>
-                        <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Batch</span></a></li>
+                    <ul class="list-bg-color btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                        <li><a href="<?= base_url()?>dashboard/all_batch" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Batchs</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_batch" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Batch</span></a></li>
+                        <li><a href="#" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Batch</span></a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="sidebar-item">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#branch-collapse" aria-expanded="false">
+            <li class="sidebar-item custom-border">
+                <button class="custom-padding btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#branch-collapse" aria-expanded="false">
                     <i class="fa-solid fa-code-branch btn-icon"></i></i><span> Branch</span>
                 </button>
                 <div class="collapse" id="branch-collapse" style="">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
-                        <li><a href="<?= base_url()?>dashboard/all_branch" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Branchs</span></a></li>
-                        <li><a href="<?= base_url()?>dashboard/add_branch" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Branch</span></a></li>
-                        <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Branch</span></a></li>
+                    <ul class="list-bg-color btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                        <li><a href="<?= base_url()?>dashboard/all_branch" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Branchs</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_branch" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Branch</span></a></li>
+                        <li><a href="#" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Branch</span></a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="sidebar-item">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#class-collapse" aria-expanded="false">
+            <li class="sidebar-item custom-border">
+                <button class="custom-padding btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#class-collapse" aria-expanded="false">
                     <i class="fa-brands fa-atlassian btn-icon"></i><span> Class</span>
                 </button>
                 <div class="collapse" id="class-collapse" style="">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
-                        <li><a href="<?= base_url()?>dashboard/all_class" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Classs</span></a></li>
-                        <li><a href="<?= base_url()?>dashboard/add_class" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Class</span></a></li>
-                        <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Class</span></a></li>
+                    <ul class="list-bg-color btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                        <li><a href="<?= base_url()?>dashboard/all_class" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Classs</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_class" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Class</span></a></li>
+                        <li><a href="#" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Class</span></a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="sidebar-item">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#payment-collapse" aria-expanded="false">
+            <li class="sidebar-item custom-border">
+                <button class="custom-padding btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#payment-collapse" aria-expanded="false">
                     <i class="fa-solid fa-money-bill-1-wave btn-icon"></i><span> Payment</span>
                 </button>
                 <div class="collapse" id="payment-collapse" style="">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
-                        <li><a href="<?= base_url()?>dashboard/all_payment" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Payment</span></a></li>
-                        <li><a href="<?= base_url()?>dashboard/add_payment" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add payment</span></a></li>
-                        <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Class</span></a></li>
+                    <ul class="list-bg-color btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                        <li><a href="<?= base_url()?>dashboard/all_payment" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>All Payment</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_payment" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add payment</span></a></li>
+                        <li><a href="#" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Class</span></a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="sidebar-item">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#notice-collapse" aria-expanded="false">
+            <li class="sidebar-item custom-border">
+                <button class="custom-padding btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#notice-collapse" aria-expanded="false">
                     <i class="fa-solid fa-bell btn-icon"></i><span> Notice</span>
                 </button>
                     <div class="collapse" id="notice-collapse" style="">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
-                        <li><a href="<?= base_url()?>dashboard/all_notice" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i> <span>All Notices</span></a></li>
-                        <li><a href="<?= base_url()?>dashboard/add_notice" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Notice</span></a></li>
-                        <li><a href="#" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Notice</span></a></li>
+                    <ul class="list-bg-color btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                        <li><a href="<?= base_url()?>dashboard/all_notice" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i> <span>All Notices</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_notice" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Notice</span></a></li>
+                        <li><a href="#" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Delete Notice</span></a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <li class="nav-small-cap custom-border">
+              <i class="ti ti-dots  custom-border-icon fs-4"></i>
               <span class="hide-menu">Dynamic Data</span>
             </li>
 
-            <li class="sidebar-item">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#logo-slider" aria-expanded="false">
+            <li class="sidebar-item custom-border">
+                <button class="custom-padding btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#logo-slider" aria-expanded="false">
                     <i class="fa-solid fa-bell btn-icon"></i><span> Logo & Home Slider</span>
                 </button>
                     <div class="collapse" id="logo-slider" style="">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
-                        <li><a href="<?= base_url()?>dashboard/logo_slider_view" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i> <span>View Logo & slider</span></a></li>
-                        <li><a href="<?= base_url()?>dashboard/all_slider_content" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i> <span> All slider Content</span></a></li>
-                        <li><a href="<?= base_url()?>dashboard/add_slider" class="link-body-emphasis d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i> <span> Add slider Content</span></a></li>
+                      <ul class="list-bg-color btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                        <li><a href="<?= base_url()?>dashboard/logo_slider_view" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i> <span>View Logo & slider</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/all_slider_content" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i> <span> All slider Content</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_slider" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i> <span> Add slider Content</span></a></li>
                       </ul>
                 </div>
-            </li>
-
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">AUTH</span>
-            </li>
-
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="<?= base_url('logout')?>" aria-expanded="false">
-                <span>
-                  <i class="ti ti-login"></i>
-                </span>
-                <span class="hide-menu">Logout</span>
-              </a>
-            </li>
-            
+            </li>            
           </ul>
         </nav>
         <!-- End Sidebar navigation -->
@@ -239,28 +224,34 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
           <ul class="navbar-nav">
             <li class="nav-item d-block d-xl-none">
-              <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
+              <a class="nav-link sidebartoggler nav-icon-hover text-black" id="headerCollapse" href="javascript:void(0)">
               <i class="fa-solid fa-bars"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-icon-hover" href="javascript:void(0)">
+              <a class="nav-link nav-icon-hover text-black" href="javascript:void(0)">
               <i class="fa-regular fa-bell"></i>
-                <div class="notification bg-primary rounded-circle"></div>
+                <div class="notification  rounded-circle"></div>
               </a>
             </li>
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-             
-                <li class="nav-item dropdown">
-                    <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
-                    aria-expanded="false">
+              
+                <li class="nav-item ">
+                    <a class="profile ">
                         <img src="<?= base_url('uploads/img/'.session()->get('image')) ?>" alt="" width="35" height="35" class="rounded-circle">
                     </a>
                 </li>
+
+                <li class="nav-item ">
+                    <a class="profile" >
+                        <span class="profile-name"><?= session()->get('name') ?></span>
+                    </a>
+                </li>
+                
                 <li>
-                    <a class="btn btn-secondary mx-3"  href="<?= base_url('logout')?>">Log out</a>
+                    <a class="btn  btn-auth mx-3"  href="<?= base_url('logout')?>">Log out</a>
                 </li>
             </ul>
           </div>

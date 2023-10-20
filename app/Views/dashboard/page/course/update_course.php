@@ -5,10 +5,10 @@
 <?= $this->endSection() ?>
  
 <?= $this->section('content') ?>
-<div class="row justify-content-center">
+<div class="row justify-content-center"> 
         <div class="col-8 m-3">
 
-            <form action="<?= base_url('dashboard/update_course/').$course['course_id'];?>" method="post">
+            <form action="<?= base_url('dashboard/update_course/').$course['course_id'];?>" method="post" enctype="multipart/form-data">
             <div class="d-flex justify-content-between my-4"> <h3><?= $page_heading; ?></h3> <a href="<?= base_url()?>/dashboard/all_course" class="text-decoration-none btn btn-primary ">All new</a></div>
               
                 <div class="mb-3">
@@ -18,9 +18,22 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="course-fee" class="form-label">course-fee</label>
+                    <label for="course-fee" class="form-label">Course Fee</label>
                     <input type="text" class="form-control"  id="course-fee" name="course-fee" value="<?= $course['c_course_fee']?>">
                     <small class="text-danger"><?= isset($validation["course-fee"]) ? $validation["course-fee"] : null;  ?></small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="course-desc" class="form-label">Course Description</label>
+                    <input type="text" class="form-control"  id="course-desc" name="course-desc" value="<?= $course['course_desc']?>">
+                    <small class="text-danger"><?= isset($validation["course-desc"]) ? $validation["course-desc"] : null;  ?></small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="course-img" class="form-label">Image</label>
+                    <input type="file" class="form-control"  id="course-img" name="course-img">
+                    <small class="text-danger"><?= isset($validation["course-img"]) ? $validation["course-img"] : null;  ?></small>
+                    <img src="<?= base_url('uploads/img/'.$course['course_image'])?>" width="100" alt="">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
