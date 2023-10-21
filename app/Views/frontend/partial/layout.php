@@ -75,15 +75,17 @@
                                     $logos = new LogoModel();
                                     $logo= $logos->first();
                                 ?>
-
-                            <img class="" src="<?= base_url('uploads/logo/'.$logo['logo_image']) ?>"   alt="">
-                                <!-- <img src="" width="40" height="32"  alt="Mosharrof" sizes="" srcset=""> -->
+                                <?php if($logo>0) :?>
+                                    <img class="" src="<?= base_url('uploads/logo/'.$logo['logo_image']) ?>"   alt="">
+                                <?php else :?>
+                                    <h2>School</h2>
+                                <?php endif ?>
                             </a>
                         </div>
                         <div class="d-flex flex-wrap align-items-center justify-content-between">
                             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                                <li><a href="#" class="nav-link px-4 text-black">Home</a></li>
-                                <li><a href="#" class="nav-link px-4 text-black">Features</a></li>
+                                <li><a href="<?= base_url('/') ?>" class="nav-link px-4 text-black">Home</a></li>
+                                <li><a href="<?= base_url('/course') ?>" class="nav-link px-4 text-black">Course</a></li>
                                 <li><a href="#" class="nav-link px-4 text-black">Pricing</a></li>
                                 <li><a href="#" class="nav-link px-4 text-black">FAQs</a></li>
                                 <li><a href="#" class="nav-link px-4 text-black">About</a></li>

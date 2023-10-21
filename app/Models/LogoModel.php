@@ -13,7 +13,7 @@ class LogoModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['logo_id','logo_image'];
+    protected $allowedFields    = ['logo_id','site_name','site_desc','logo_image'];
 
     // Dates
     protected $useTimestamps = false;

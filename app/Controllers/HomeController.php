@@ -8,6 +8,7 @@ use App\Models\StudentModel;
 use App\Models\CourseModel;
 use App\Models\BranchModel;
 use App\Models\BatchModel;
+use App\Models\NoticeModel;
 
 class HomeController extends BaseController
 {
@@ -221,8 +222,47 @@ class HomeController extends BaseController
             }
         }
         return View('frontend\page\apply_student', $data);
-        
+    }
+
+
+    //Course Page
+    public function coursePage()
+    {        
+        $course= new CourseModel();
+        $data = [
+            "page_title"=>"course",
+            "page_heading" =>"course",
+            'courses'=> $course->findAll(),
+        ];
+        return view('frontend\page\course', $data);
     }
    
 
+    //Notice Page
+    public function noticePage()
+    {        
+        $notice= new NoticeModel();
+        $data = [
+            "page_title"=>"notice",
+            "page_heading" =>"notice",
+            'notices'=> $notice->orderby('notice_id','DESC')->paginate(10, 'group'),
+            'pager' => $notice->pager,
+        ];
+        return view('frontend\page\notice', $data);
+    }
+
+
+    //Single Notice Page
+    public function singleNotice($id)
+    {        
+        $notice= new NoticeModel();
+        $data = [
+            "page_title"=>"notice",
+            "page_heading" =>"notice",
+            'notice'=> $notice->where('notice_id', $id)->first(),
+            'notices'=> $notice->orderby('notice_id','DESC')->paginate(10),
+        ];
+        return view('frontend\page\single-notice', $data);
+    }
+   
 }

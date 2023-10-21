@@ -42,13 +42,15 @@
             <!-- <img src="../assets/images/logos/dark-logo.svg" alt="Mosharrof" width="180" alt="" /> -->
 
             <?php
-                    use App\Models\LogoModel;
-                    $logos = new LogoModel();
-                    $logo= $logos->first();
-                ?>
-
-            <img class="" src="<?= base_url('uploads/logo/'.$logo['logo_image']) ?>" width="100"  alt="">
-            
+              use App\Models\LogoModel;
+              $logos = new LogoModel();
+              $logo= $logos->first();
+            ?>
+            <?php if($logo>0) :?>
+              <img class="" src="<?= base_url('uploads/logo/'.$logo['logo_image']) ?>" width="100"  alt="">
+            <?php else :?>
+              <h2>School</h2>
+            <?php endif ?>
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>

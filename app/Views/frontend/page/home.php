@@ -22,7 +22,7 @@
                 }
                 ?>
 
-            <div class="position-absolute">
+            <!-- <div class="position-absolute"> -->
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -62,6 +62,20 @@
                 </div>
             </div>
         </div>
+        <div class="container-fluid"></div>
+        <div class="row justify-content-center">
+            <div class="col-md-2 col-sm-3 col-xs-2 bg-blue content-center align-items-center">
+                <h6 class="text-white mb-0"><span>Update Notice</span><i class="fa-solid fa-angles-right ms-1"></i></h6>
+            </div>
+            <div class="col-md-10 col-sm-9 col-xs-10 ">
+                <marquee behavior="scroll" direction="left"  scrolldelay="200">
+                    <ul class="recent-news-list" style="display: flex">
+                        <li style="margin-top: 5px;margin-right: 100px;color:#000;display: inline;float:left">Admission Notice !!!!
+                        </li>
+                    </ul>
+                </marquee>
+            </div>
+        </div>
     </section>
     <!-- <section class="py-5">
         <div class="container">
@@ -85,7 +99,7 @@
     </section> -->
 
     <!-- About Start -->
-    <section class="container-xxl py-5 mb-5" style="background: #f3f8f9;">
+    <section class=" py-5 mb-5" style="background: #f3f8f9;">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
