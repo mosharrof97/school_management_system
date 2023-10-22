@@ -448,6 +448,47 @@ color: var(--white);
 }
 
 /******************** Notice CSS *******************/
+
+
+/************ Bannar CSS ***********/
+.breadcrumb-area {
+  padding: 90px 50px 50px 0px;
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  border-radius: inherit;
+  padding-top: 15px;
+}
+.breadcrumb li:first-child {
+  padding-left: 0;
+  margin-right: 5px;
+}
+.breadcrumb li a {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+.breadcrumb li a::after {
+  background: #ffffff;
+  content: "";
+  height: 4px;
+  margin-top: 1px;
+  position: absolute;
+  top: 70%;
+  width: 4px;
+  border-radius: 50%;
+}
+.breadcrumb li.active {
+  color: #ffb606;
+}
+
+/************ Notice Content CSS ***********/
 .default-padding {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -495,8 +536,8 @@ input {
   text-align: justify;
   font-family: 'Poppins', Arial, sans-serif;
 }
-/***==== Notice SideBar CSS =====***/
 
+/***==== Notice SideBar CSS =====***/
 .sidebar {
   padding-left: 35px;
 }
@@ -601,6 +642,11 @@ input {
   overflow: hidden;
 }
 
+/****************** Admission *******************/
+.admission-apply{
+  width: 100%;
+  height: 100vh;
+}
 
 
 

@@ -1,6 +1,25 @@
 <?= $this->extend('frontend/partial/layout') ?>
+<?= $this->section('title') ?>
+    <?= $page_title ?> 
+<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<!--=============== Bannar ================-->
+<div class="breadcrumb-area text-center" style="background-image: url(<?= base_url('frontend.assets\img\bannar.jpg')?>); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h2 class="text-white">Notice</h2>
+                <ul class="breadcrumb">
+                    <li><a class="text-white" href="<?= base_url()?>"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="active" style="font-size: 16px; font-weight:600;">Notice</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=============== Bannar ================-->
+
 
 <div class="default-padding">
     <div class="container">
@@ -8,7 +27,7 @@
             <!-- Start Course Info -->
             <div class="col-md-8">
                 <div class="notice-info">
-                    <div class="content-right">
+                    <div class="content-right mb-3">
                         <ul>
                             <li class="notice-date ">
                                 <span>Published Date: <?= $notice['date']?></span>
@@ -16,7 +35,9 @@
                         </ul>
                     </div>
                     <div class="clearfix"></div>
-                    <h3 class=""><?= $notice['title']?> </h3>
+                    <div class="py-3">
+                        <h3 class=""><?= $notice['title']?> </h3>
+                    </div>
                     <div class="clearfix"></div>
                     <div class="notice-info">
                         <div class="notice-img">

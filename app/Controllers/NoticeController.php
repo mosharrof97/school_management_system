@@ -34,19 +34,25 @@ class NoticeController extends BaseController
             $title=$this->request->getPost('title');
             $desc=$this->request->getPost('desc');
             $image=$this->request->getFile('image');
-            $imageName=$image->getRandomName();
-
-            $formData=[
-                'title'=>$title,
-                'desc'=> $desc,
-                'image' => $imageName,
-            ];
-
-            $image->move('uploads/img', $imageName);
-            $notice->insert($formData);
             
-        }
 
+            if($image && $image->isvalid() && !$image->hasMoved()){
+                $imageName=$image->getRandomName();
+                $formData=[
+                    'title'=>$title,
+                    'desc'=> $desc,
+                    'image' => $imageName,
+                ];
+                $image->move('uploads/img', $imageName);
+                $notice->insert($formData);
+            }else{
+                $formData=[
+                    'title'=>$title,
+                    'desc'=> $desc,
+                ];
+                $notice->insert($formData);
+            }
+        }
         return view('dashboard/page/notice/add_notice', $data);
     }
 

@@ -13,7 +13,7 @@ class ClassModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['class_id','date','class_name', 'teacher','time'];
+    protected $allowedFields    = ['class_id','date','class_name', 'branch_id','teacher','time'];
 
     // Dates
     protected $useTimestamps = false;

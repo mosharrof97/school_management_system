@@ -24,6 +24,19 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="branch" class="form-label">Branch</label>
+                    <select class="form-select" aria-label="Default select example" id="branch" name="branch">
+                        
+                        <option selected>Select Branch</option>
+                        <?php foreach($branch as $row):?>
+                        <option value="<?= $row['branch_id']?>"><?= $row['branch_name']?></option>
+                        
+                            <?php endforeach ?>
+                    </select>
+                    <small class="text-danger"><?= isset($validation['role']) ? $validation['role'] : null ;  ?></small>
+                </div>
+
+                <div class="mb-3">
                     <label for="teacher" class="form-label">Teacher</label>
                     <input type="text" class="form-control"  id="teacher" name="teacher">
                     <small class="text-danger"><?= isset($validation["teacher"]) ? $validation["teacher"] : null;  ?></small>

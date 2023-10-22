@@ -10,12 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-------- CDN Link --------->
 
-    <!--------- Data Table----- -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <!--------- Data Table----- -->
-
     <!------ Custome Css ------->
     <link rel="stylesheet" href="<?=base_url("style.css"); ?>">
     <!------ Custome Css ------->
@@ -193,6 +187,19 @@
                 </div>
             </li>
 
+            <li class="sidebar-item custom-border">
+                <button class="custom-padding btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#admission-collapse" aria-expanded="false">
+                   <i class="fa-solid fa-globe btn-icon"></i><span> Admission</span>
+                </button>
+                    <div class="collapse" id="admission-collapse" style="">
+                    <ul class="list-bg-color btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                        <li><a href="<?= base_url()?>dashboard/all_admission" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i> <span>All Notices</span></a></li>
+                        <li><a href="<?= base_url()?>dashboard/add_admission" class="list-color  d-inline-flex align-items-center text-decoration-none rounded"><i class="fa-solid fa-angle-right btn-icon-child "></i><span>Add Notice</span></a></li>
+                        
+                    </ul>
+                </div>
+            </li>
+
             <li class="nav-small-cap custom-border">
               <i class="ti ti-dots  custom-border-icon fs-4"></i>
               <span class="hide-menu">Dynamic Data</span>
@@ -270,12 +277,6 @@
     </div>
   </div>
 
-<!--------- Data Table Start ----- -->
-<script src=" https://code.jquery.com/jquery-3.7.0.js "></script>
-<script src=" https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" ></script>
-<script src=" https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script> 
-<!--------- Data Table End ----- -->
-
   <!----- Js CDN Start ------>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
@@ -286,12 +287,6 @@
 <!------- Custom Js Start -------->
 <script src="<?=base_url("jQuery.js")?> "></script>
 <!------- Custom Js End -------->
-
-<!-----Dashboard Js Start ------>
-  <script src="<?=base_url("assets/js/sidebarmenu.js")?>"></script>
-  <script src="<?=base_url("assets/js/app.min.js")?>"></script>
-  <script src="<?=base_url("assets/js/dashboard.js")?>"></script> 
-<!-----Dashboard Js End ------>
 
 </body>
 

@@ -1,7 +1,26 @@
 <?= $this->extend('frontend/partial/layout') ?>
+<?= $this->section('title') ?>
+    <?= $page_title ?> 
+<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<!--=============== Bannar ================-->
+<div class="breadcrumb-area text-center" style="background-image: url(<?= base_url('frontend.assets\img\bannar.jpg')?>); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h2 class="text-white">Notice</h2>
+                <ul class="breadcrumb">
+                    <li><a class="text-white" href="<?= base_url()?>"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="active" style="font-size: 16px; font-weight:600;">Notice</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=============== Bannar ================-->
 
+<!--========== Notice Content ============-->
 <div class=" default-padding">
     <div class="container">
         <div class="row content-between align-items-center p-2" id="heading-gradiant">
@@ -78,16 +97,7 @@
                                                     <span class="page-link" aria-hidden="true">‹</span>
                                                 </li>
                                                 <?= $pager->links('group') ?>
-                                                <!-- <li class="page-item"><a class="page-link" href="https://www.du.ac.bd/notice?page=2">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="https://www.du.ac.bd/notice?page=3">3</a></li>
-                                                <li class="page-item"><a class="page-link" href="https://www.du.ac.bd/notice?page=4">4</a></li>
-                                                <li class="page-item"><a class="page-link" href="https://www.du.ac.bd/notice?page=5">5</a></li>
-                                                <li class="page-item"><a class="page-link" href="https://www.du.ac.bd/notice?page=6">6</a></li>
-                                                <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
-                                                <li class="page-item"><a class="page-link" href="https://www.du.ac.bd/notice?page=108">108</a></li>
-                                                <li class="page-item"><a class="page-link" href="https://www.du.ac.bd/notice?page=109">109</a></li> -->
                                                 <li class="page-item">
-                                                    <!-- <a class="page-link" href="https://www.du.ac.bd/notice?page=2" rel="next" aria-label="Next »">›</a> -->
                                                     <span class="page-link" aria-label="Next »">›</span>
                                                 </li>
                                             </ul>
@@ -129,3 +139,4 @@
 </div>
 
 <?= $this->endSection() ?>
+

@@ -1,4 +1,7 @@
 <?= $this->extend('frontend/partial/layout') ?>
+<?= $this->section('title') ?>
+    <?= $page_title ?> 
+<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
     <section>
@@ -61,7 +64,7 @@
                     <div class="future-text">solve class</div>
                 </div>
             </div>
-        </div>
+        </div> 
         <div class="container-fluid"></div>
         <div class="row justify-content-center">
             <div class="col-md-2 col-sm-3 col-xs-2 bg-blue content-center align-items-center">
@@ -70,8 +73,7 @@
             <div class="col-md-10 col-sm-9 col-xs-10 ">
                 <marquee behavior="scroll" direction="left"  scrolldelay="200">
                     <ul class="recent-news-list" style="display: flex">
-                        <li style="margin-top: 5px;margin-right: 100px;color:#000;display: inline;float:left">Admission Notice !!!!
-                        </li>
+                        <li style="margin-top: 5px;margin-right: 100px;color:#000;display: inline;float:left"><?= $notice['title']?></li>
                     </ul>
                 </marquee>
             </div>

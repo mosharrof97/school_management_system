@@ -1,20 +1,27 @@
 <?= $this->extend('frontend/partial/layout') ?>
+<?= $this->section('title') ?>
+    <?= $page_title ?> 
+<?= $this->endSection() ?>
 
-<?= $this->section('content') ?>
-    <section>
-        <div id="" class="  position-relative" >
-            <div class="carousel-inner">
-                <img src="<?= base_url('uploads\slider\1697704428_e6c0f782583383d5ece4.jpg') ?>" class="d-block w-100 " alt="...">
-                <div class="carousel-caption d-none d-md-block " style="left: 43%;padding-top: 9.25rem;">
-                    <h5 class="slider-title">Course Page</h5>
-                </div>
+<?= $this->section('content') ?> 
+<!--=============== Bannar ================-->
+<div class="breadcrumb-area text-center" style="background-image: url(<?= base_url('frontend.assets\img\bannar.jpg')?>); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h2 class="text-white"><?= $page_heading ?></h2>
+                <ul class="breadcrumb">
+                    <li><a class="text-white" href="<?= base_url()?>"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="active" style="font-size: 16px; font-weight:600;"><?= $page_heading ?></li>
+                </ul>
             </div>
         </div>
-    </section>
-    
+    </div>
+</div>
+<!--=============== Bannar ================-->
 
     <!--============== Course Section ===============-->
-    <section class="my-5 py-5 " style="background: #f3f8f9;">
+    <section class=" py-5 " style="background: #f3f8f9;">
         <div class="container ">
             <div class="row" >
                 <div class="col-4 my-2  d-flex  align-items-center">

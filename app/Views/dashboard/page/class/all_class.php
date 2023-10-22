@@ -16,6 +16,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Date</th>
                 <th scope="col">Class name</th>
+                <th scope="col">Branch name</th>
                 <th scope="col">Teacher</th>
                 <th scope="col">Class Time</th>
                 <th scope="col">Action</th>
@@ -30,6 +31,7 @@
                     <td><?= $classs['class_id'] ?></td>
                     <td><?= $classs['date'] ?></td>
                     <td><?= $classs['class_name'] ?></td>
+                    <td><?= $classs['branch_name'] ?></td>
                     <td><?= $classs['teacher'] ?></td>
                     <td><?= $classs['time'] ?></td>
                     <td>

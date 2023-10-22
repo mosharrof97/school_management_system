@@ -390,20 +390,34 @@ class StudentController extends BaseController
             $batch = $this->request->getPost('batch');
             $branch = $this->request->getPost('branch');
             $course_fee = $this->request->getPost('course_fee');
+            $image = $this->request->getFile('file');
+            $imageName = $image->getRandomName();
 
             $validData=[
                 'name'=>$name,	
                 'number'=>$number, 
                 'email'=>$email, 
                 'father-name'=>$father_name,
-                'father-number'=>$father_number, 'mother-name'=>$mother_name, 'mother-number'=>$mother_number, 
-                'district'=>$district,	'address'=>$address, 'college-name'=>$college_name,	
-                'hsc-roll'=>$hsc_roll,	'hsc-reg'=>$hsc_reg, 'hsc-gpa'=>$hsc_gpa, 
-                'school-name'=>$school_name, 'ssc-roll'=>$ssc_roll,	'ssc-reg'=>$ssc_reg, 'ssc-gpa'=>$ssc_gpa, 
-                'course'=>$course, 'batch'=>$batch,	'branch'=>$branch, 'course_fee'=>$course_fee, 
+                'father-number'=>$father_number, 
+                'mother-name'=>$mother_name, 
+                'mother-number'=>$mother_number, 
+                'district'=>$district,	
+                'address'=>$address, 
+                'college-name'=>$college_name,	
+                'hsc-roll'=>$hsc_roll,	
+                'hsc-reg'=>$hsc_reg, 
+                'hsc-gpa'=>$hsc_gpa, 
+                'school-name'=>$school_name, 
+                'ssc-roll'=>$ssc_roll,	
+                'ssc-reg'=>$ssc_reg, 
+                'ssc-gpa'=>$ssc_gpa, 
+                'course'=>$course, 
+                'batch'=>$batch,	
+                'branch'=>$branch, 
+                'course_fee'=>$course_fee, 
             ];
 
-            // if($validation->run($validData)){ 
+            if($validation->run($validData)){ 
                 $formdata = [
                     'name'=>$name,	
                     'number'=>$number, 
@@ -428,16 +442,24 @@ class StudentController extends BaseController
                     'course_fee'=>$course_fee, 
                     
                 ];
+                if($image && $image->isvalid() && !$image->hasMoved()){
+                    $formdata = ['image'=>$imageName];
+                    $image->move('uploads/img', $imageName); 
+                    $student->update($id,$formdata);
+                    $session =  session();
+                    $session->setFlashData("success", "Successful Registration");
+                    return redirect()->to("/dashboard/all_student");
+                }else{
+                    $student->update($id,$formdata);
+                    $session =  session();
+                    $session->setFlashData("success", "Successful Registration");
+                    return redirect()->to("/dashboard/all_student");
+                }
 
-                $student->update($id,$formdata);
-                $session =  session();
-                $session->setFlashData("success", "Successful Registration");
-                return redirect()->to("/dashboard/all_student");
-
-            // }else{
-            //     $data["validation"] = $validation->getErrors();
-            //     // echo "data Invalid";
-            // }
+            }else{
+                $data["validation"] = $validation->getErrors();
+                // echo "data Invalid";
+            }
         }
         return View('dashboard/page/student/update_student', $data);
     }

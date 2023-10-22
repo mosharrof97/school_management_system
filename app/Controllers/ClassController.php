@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ClassModel ;
+use App\Models\BranchModel ;
 
 class ClassController extends BaseController
 {
@@ -13,8 +14,7 @@ class ClassController extends BaseController
         $data=[
             'page_title'=>'All Class',
             'page_heading'=>'All Class',
-            // 'class'=>$class->orderby('class_id','DESC',)->findAll(),
-            'class'=>$class->orderby('class_id','DESC',)->paginate(3, 'group'),
+            'class'=>$class->join('branch', 'branch.branch_id = class.branch_id')->orderby('class_id','DESC',)->paginate(20, 'group'),
             'pager'=>$class->pager,
         ];
 
@@ -25,18 +25,22 @@ class ClassController extends BaseController
     //class Create
     public function addclass(){
         $class = new ClassModel ;
+        $branch = new BranchModel ;
         $data=[
             'page_title'=>'Add Class',
             'page_heading'=>'Add Class',
+            'branch'=> $branch->findAll(),
         ];
         if($this->request->getMethod()=='post'){
             $date=$this->request->getPost('date');        
             $class_name=$this->request->getPost('class-name');        
+            $branch=$this->request->getPost('branch');        
             $teacher=$this->request->getPost('teacher');        
             $time=$this->request->getPost('time'); 
             $formData=[
                 'date'=>$date,
                 'class_name'=>$class_name,
+                'branch_id'=>$branch,
                 'teacher'=>$teacher,
                 'time'=>$time
             ];

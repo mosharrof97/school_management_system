@@ -22,7 +22,7 @@
   <!------ Custome Css ------->
       <link rel="stylesheet" href="<?=base_url("frontend.style.css"); ?>">
     <!------ Custome Css ------->
-    <title>Document</title>
+    <title><?= $this->renderSection('title') ?></title>
 </head>
 <body>
     
@@ -85,9 +85,10 @@
                         <div class="d-flex flex-wrap align-items-center justify-content-between">
                             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                                 <li><a href="<?= base_url('/') ?>" class="nav-link px-4 text-black">Home</a></li>
+                                <li><a href="<?= base_url('/class') ?>" class="nav-link px-4 text-black">Class</a></li>
                                 <li><a href="<?= base_url('/course') ?>" class="nav-link px-4 text-black">Course</a></li>
-                                <li><a href="#" class="nav-link px-4 text-black">Pricing</a></li>
-                                <li><a href="#" class="nav-link px-4 text-black">FAQs</a></li>
+                                <li><a href="<?= base_url('/notice') ?>" class="nav-link px-4 text-black">Notice</a></li>
+                                <li><a href="<?= base_url('/admission-page') ?>" class="nav-link px-4 text-black">Admission</a></li>
                                 <li><a href="#" class="nav-link px-4 text-black">About</a></li>
                             </ul>
 

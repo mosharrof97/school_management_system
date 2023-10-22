@@ -18,12 +18,17 @@ $routes->group('', static function($routes){
 
 // $routes->group('',  static function($routes){
     
-    $routes->get('/', 'HomeController::index' ); 
-    $routes->get('/course', 'HomeController::coursePage' ); 
-    $routes->get('/notice', 'HomeController::noticePage' ); 
-    $routes->get('/single-notice/(:num)', 'HomeController::singleNotice/$1' ); 
-    $routes->get('/apply-student', 'HomeController::applystudent' ); 
-    $routes->post('/apply-student', 'HomeController::applystudent' ); 
+    $routes->get('/', 'FrontendPageController::index' ); 
+    $routes->get('/course', 'FrontendPageController::coursePage' ); 
+    $routes->get('/notice', 'FrontendPageController::noticePage' ); 
+    $routes->get('/single-notice/(:num)', 'FrontendPageController::singleNotice/$1' ); 
+
+    $routes->get('/admission-page', 'AdmissionController::admissionPage' );
+    $routes->get('/admission-apply/(:num)', 'AdmissionController::admissionApply/$1' ); 
+
+    $routes->get('/class', 'FrontendPageController::classpage' ); 
+    $routes->get('/apply-student', 'FrontendPageController::applystudent' ); 
+    $routes->post('/apply-student', 'FrontendPageController::applystudent' ); 
 
 
 
@@ -108,32 +113,26 @@ $routes->group('', ['filter'=>'authfilter:auth'], static function($routes){
     $routes->get('/dashboard/view_payment/(:num)','PaymentController::viewpayment/$1');
     $routes->get('/dashboard/single_payment/(:num)','PaymentController::singlepayment/$1');
 
+    // Admission 
+    $routes->get('/dashboard/all_admission','AdmissionController::index');
+    $routes->get('/dashboard/add_admission','AdmissionController::addadmission');
+    $routes->post('/dashboard/add_admission','AdmissionController::addadmission');
+    $routes->get('/dashboard/delete_admission/(:num)', 'AdmissionController::delete/$1');
 
-
-    // $routes->get('/dashboard/edit_student/(:num)','PaymentController::edit/$1');
-    // $routes->post('/dashboard/update_student/(:num)','PaymentController::update/$1');
-    // $routes->get('/dashboard/delete_student/(:num)','PaymentController::delete/$1');
 
     //Frontend 
     //logo
     $routes->get('/dashboard/logo_slider_view','FrontendController::logoView');
-
-
     $routes->get('/dashboard/add_logo/(:num)','FrontendController::logoEdit/$1');
     $routes->post('/dashboard/add_logo/(:num)','FrontendController::logoUpdate/$1');
 
-    // $routes->get('/dashboard/view_student/(:num)','FrontendController::viewstudent/$1');
-    // $routes->get('/dashboard/delete_student/(:num)',    'FrontendController::delete/$1');
 
     //Slider
     $routes->get('/dashboard/all_slider_content','FrontendController::allSliderContent');
     $routes->get('/dashboard/add_slider','FrontendController::addslider');
     $routes->post('/dashboard/add_slider','FrontendController::addslider');
 
-    $routes->get('/dashboard/update_student/(:num)','FrontendController::edit/$1');
-    $routes->post('/dashboard/update_student/(:num)','FrontendController::update/$1');
-    $routes->get('/dashboard/view_student/(:num)','FrontendController::viewstudent/$1');
-    $routes->get('/dashboard/delete_student/(:num)',    'FrontendController::delete/$1');
+    //
 });
 
 
